@@ -54,6 +54,7 @@ export default function Home() {
               {
                 levels.map((level) => (
                   <NFTCard 
+                    key={level.id}
                     level={level.id} 
                     image={level.nftSrc} 
                     isClaimable={level.id <= 2}

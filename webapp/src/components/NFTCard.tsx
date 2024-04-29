@@ -12,7 +12,7 @@ interface NFTCardProps {
 export default function NFTCard(props: NFTCardProps) {
     return <Box 
         width={'100%'} 
-        borderColor={'white'} borderWidth={'1px'}
+        borderColor={'dark'} borderWidth={'1px'}
         padding='15px'
         borderRadius={'10px'}
         backgroundImage={props.isClaimable ? NFTBg.src : ''}
@@ -20,9 +20,11 @@ export default function NFTCard(props: NFTCardProps) {
         backgroundSize={'cover'}
     >   
         <VStack spacing={5}>
-            <Image src={props.image} alt={`NFT ${props.level}`} width={'100%'}/>
+            <Image src={props.image} alt={`NFT ${props.level}`} width={'100%'}
+                filter={props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
+            />
             <Text color='white' textAlign='center'>Level {props.level}</Text>
-            <Button width={'100%'} variant={'base'}>Mint NFT</Button>
+            <Button width={'100%'} variant={props.isClaimable ? 'base' : 'disabled'}>Mint NFT</Button>
         </VStack>
     </Box>
 }

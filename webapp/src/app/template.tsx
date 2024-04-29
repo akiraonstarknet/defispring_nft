@@ -11,6 +11,7 @@ import {
   jsonRpcProvider,
 } from '@starknet-react/core';
 import {
+    background,
   ChakraBaseProvider,
   extendTheme,
   StyleFunctionProps,
@@ -26,6 +27,10 @@ const theme = extendTheme({
         white: '#F3F4F6',
         dark: '#404040',
         blue: '#4D4B87',
+        blue_text: '#6F89DF',
+        blue_50p: 'rgba(77, 75, 135, 0.5)',
+        disabled_dark: '#404040',
+        disabled_light: '#9A9A9A',
         primarySchema: {
           50: '#ffe5e9',
           100: '#f9bcc2',
@@ -50,6 +55,18 @@ const theme = extendTheme({
                 padding: '6px 40px',
                 fontWeight: 'normal'
             },
+            variants: {
+                disabled: {
+                    background: 'disabled_dark',
+                    color: 'disabled_light',
+                    borderColor: 'disabled_light'
+                },
+                blue: {
+                    background: 'blue_50p',
+                    color: 'blue_text',
+                    borderColor: 'blue'
+                }
+            }
         },
     },
     styles: {

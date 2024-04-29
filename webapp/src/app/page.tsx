@@ -38,8 +38,10 @@ export default function Home() {
           >
             <Flex width={'100%'}>
               <Stat width={'60%'}>
-                <StatLabel color='white'>Total STRK earned</StatLabel>
-                <StatNumber color='primary' fontSize={'50px'} marginTop={'-15px'}>
+                <StatLabel color='blue_text' fontSize={'16px'}>Total STRK earned</StatLabel>
+                <StatNumber color='primary' fontSize={'50px'}
+                  fontWeight={'bold'}
+                  marginTop={'-15px'}>
                   {strkEarned}
                 </StatNumber>
               </Stat>
@@ -54,7 +56,7 @@ export default function Home() {
                   <NFTCard 
                     level={level.id} 
                     image={level.nftSrc} 
-                    isClaimable={level.id % 2 == 0}
+                    isClaimable={level.id <= 2}
                   ></NFTCard>
                 ))
               }

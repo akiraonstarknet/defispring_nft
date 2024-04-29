@@ -7,6 +7,6 @@ interface ConnectBtnProps {
 
 export default function ConnectBtn(props: ConnectBtnProps) {
     return <Box {...props.boxProps}>
-        <Button float={'right'} variant={'base'} padding={'6px 25px'}>Connect</Button>
+        <Button float={'right'} variant={'blue'} padding={'6px 15px'}>0xab...23d3</Button>
     </Box>
 }

@@ -39,3 +39,18 @@ body {
 div[target="progressbar"] {
   background-color: red;
 }
+
+@font-face {
+  font-family: 'NBE';
+  src: url('./fonts/NonBureauExtended-Bold.woff2') format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.nbe-font {
+  font-family:'NBE' !important;
+}
+
+.marginV20 {
+  margin: 20px 0
+}

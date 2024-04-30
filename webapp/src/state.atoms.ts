@@ -3,6 +3,7 @@ import NFT1 from '@public/nft1.png'
 import NFT2 from '@public/nft2.png'
 import NFT3 from '@public/nft3.png'
 import NFT4 from '@public/nft4.png'
+import { atomWithQuery } from 'jotai-tanstack-query';
 
 export interface Level {
     amountSTRK: number;
@@ -28,4 +29,33 @@ export const levelsAtom = atom<Level[]>([{
     nftSrc: NFT4.src,
 }])
 
-export const userSTRKEarnedAtom = atom(2);
+export const accountAtom = atom<string | undefined>(undefined);
+
+export interface UserData {
+    address: string,
+    isIntractUser: boolean,
+    strkEarned: string
+}
+
+export const userDataAtom = atomWithQuery<UserData | null>((get) => ({
+    queryKey: ['users', get(accountAtom)],
+    queryFn: async ({ queryKey}: any) => {
+        const [_, addr] = queryKey;
+        if (!addr) {
+            return null;
+        }
+        const res = await fetch(`/api/users/${addr}`)
+        return res.json()
+    }
+}))
+
+export const userSTRKEarnedAtom = atom((get) => {
+    let result = get(userDataAtom);
+    console.log('result', result)
+    if (result.data && result.data.strkEarned) {
+        const strkWei = result.data.strkEarned;
+        return parseInt(strkWei) / 10**18
+    }
+
+    return 0; 
+});

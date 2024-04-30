@@ -11,7 +11,7 @@ import {
   jsonRpcProvider,
 } from '@starknet-react/core';
 import {
-    background,
+  background,
   ChakraBaseProvider,
   extendTheme,
   StyleFunctionProps,
@@ -64,7 +64,11 @@ const theme = extendTheme({
                 blue: {
                     background: 'blue_50p',
                     color: 'blue_text',
-                    borderColor: 'blue'
+                    borderColor: 'blue',
+
+                    _hover: {
+                      background: "blue"
+                    }
                 }
             }
         },
@@ -111,7 +115,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         connectors={connectors}
       >
         <ChakraBaseProvider theme={theme}>
-            <React.Suspense>{children}</React.Suspense>
+          <React.Suspense>{children}</React.Suspense>
         </ChakraBaseProvider>
       </StarknetConfig>
   );

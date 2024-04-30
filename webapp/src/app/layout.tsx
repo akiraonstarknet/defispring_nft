@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       {/* Created by @akiraonstarknet */}
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>{children}</body>
       {/* <body>{children}</body> */}
     </html>
   );

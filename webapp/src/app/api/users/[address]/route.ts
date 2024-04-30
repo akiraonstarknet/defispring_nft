@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import IntractUsers from '@public/intractusers.json';
 import { num } from "starknet";
 
-export function standariseAddress(address: string | bigint) {
+function standariseAddress(address: string | bigint) {
     return num.getHexString(num.getDecimalString(address.toString()));
 }
 

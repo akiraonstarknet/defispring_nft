@@ -22,7 +22,9 @@ pub trait IDeFiSpringNFT<TState> {
     );
     fn upgrade(ref self: TState, newClassHash: ClassHash);
     fn set_settings(ref self: TState, settings: Settings);
+    fn get_settings(self: @TState) -> Settings;
     fn set_pubkey(ref self: TState, pubkey: felt252);
+    fn get_pubkey(self: @TState) -> felt252;
 }
 
 #[starknet::contract]
@@ -55,8 +57,7 @@ mod DeFiSpringNFT {
 
     // ERC1155 Impl
     #[abi(embed_v0)]
-    impl ERC1155CamelImpl = ERC1155Component::ERC1155CamelImpl<ContractState>;
-    impl ERC1155MetadataURIImpl = ERC1155Component::ERC1155MetadataURIImpl<ContractState>;
+    impl ERC1155MixinImpl = ERC1155Component::ERC1155MixinImpl<ContractState>;
     impl ERC1155InternalImpl = ERC1155Component::InternalImpl<ContractState>;
 
     // Upgradeable
@@ -114,6 +115,7 @@ mod DeFiSpringNFT {
         self.name.write(name);
         self.symbol.write(symbol);
         self.pubkey.write(pubkey);
+        self.settings.write(settings);
     }
 
     #[abi(embed_v0)]
@@ -136,9 +138,17 @@ mod DeFiSpringNFT {
             self._set_settings(settings);
         }
 
+        fn get_settings(self: @ContractState) -> Settings {
+            self.settings.read()
+        }
+
         fn set_pubkey(ref self: ContractState, pubkey: felt252) {
             self.ownable.assert_only_owner();
             self._set_pubkey(pubkey);
+        }
+
+        fn get_pubkey(self: @ContractState) -> felt252 {
+            self.pubkey.read()
         }
 
         fn mint(ref self: ContractState, rewardEarned: u128, hash: felt252, signature: Array<felt252>) {
@@ -158,9 +168,9 @@ mod DeFiSpringNFT {
             let caller = get_caller_address();
 
             let isMint = self._check_and_mint(1, settings.minEarning1, rewardEarned, caller, false);
-            let isMint = self._check_and_mint(2, settings.minEarning1, rewardEarned, caller, isMint);
-            let isMint = self._check_and_mint(3, settings.minEarning1, rewardEarned, caller, isMint);
-            let isMint = self._check_and_mint(4, settings.minEarning1, rewardEarned, caller, isMint);
+            let isMint = self._check_and_mint(2, settings.minEarning2, rewardEarned, caller, isMint);
+            let isMint = self._check_and_mint(3, settings.minEarning3, rewardEarned, caller, isMint);
+            let isMint = self._check_and_mint(4, settings.minEarning4, rewardEarned, caller, isMint);
 
             // ensures user doesnt call contract multiple times 
             // if they aren't eligible for a new NFT yet

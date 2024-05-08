@@ -30,6 +30,8 @@ export async function GET(req: Request) {
             latestBlock,
             syncedBlock,
             message: 'Indexers are active'
+        }, {
+            status: 200
         })
     } else {
         return NextResponse.json({
@@ -37,6 +39,8 @@ export async function GET(req: Request) {
             latestBlock,
             syncedBlock: 0,
             message: 'Indexers are not active'
+        }, {
+            status: 500
         })
     }
 }

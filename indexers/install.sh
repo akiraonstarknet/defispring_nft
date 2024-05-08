@@ -19,7 +19,7 @@ echo "configuring"
 echo "making"
 make 
 echo "installing glibc"
-sudo make install
+make install
 
 # # Install apibara
 # curl -sL https://install.apibara.com | bash

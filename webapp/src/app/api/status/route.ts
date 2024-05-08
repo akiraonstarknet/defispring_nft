@@ -29,12 +29,14 @@ export async function GET(req: Request) {
             isActive: latestBlock - syncedBlock < 10,
             latestBlock,
             syncedBlock,
+            message: 'Indexers are active'
         })
     } else {
         return NextResponse.json({
             isActive: false,
             latestBlock,
             syncedBlock: 0,
+            message: 'Indexers are not active'
         })
     }
 }

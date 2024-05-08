@@ -11,12 +11,15 @@ sudo apt-get update
 echo "installing gawk bison"
 sudo apt-get install gawk bison -y
 echo "installing glibc"
-wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.34.tar.gz
-tar -zxvf glibc-2.34.tar.gz && cd glibc-2.34
+wget -c https://ftp.gnu.org/gnu/glibc/glibc-2.39.tar.gz
+tar -zxvf glibc-2.39.tar.gz && cd glibc-2.39
 mkdir glibc-build && cd glibc-build
-../configure --prefix=/opt/glibc-2.34
+echo "configuring"
+../configure --prefix=/opt/glibc-2.39
+echo "making"
 make 
-make install
+echo "installing glibc"
+sudo make install
 
 # # Install apibara
 # curl -sL https://install.apibara.com | bash

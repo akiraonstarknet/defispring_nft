@@ -7,7 +7,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "get_synced_block": "tsx src/get_synced_block.ts",
-    "start": "apibara run --allow-env=.env src/indexer.ts --sink-id=1",
+    "start": "apibara run --allow-env=.env src/indexer.ts --sink-id=1 --status-server-address=0.0.0.0:1234",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "akiraonstarknet",

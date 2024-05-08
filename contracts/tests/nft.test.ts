@@ -84,7 +84,7 @@ describe("NFT", function () {
         expect(uri).toBe(`${baseURI}`);
     })
 
-    it("Mint: Should pass", async () => {
+    it("Mint: Should pass basic", async () => {
         let contract = await deploy(classhash);   
         let level1Amount = 10 * (10**18);
         const hash1 = hash.computePedersenHash(acc.address, "10000000000000000000");
@@ -105,8 +105,9 @@ describe("NFT", function () {
         ])
 
         const tx = await acc.execute([mintCall], undefined, {
-            maxFee: 10**15
+            maxFee: 3 * (10**15)
         });
+        console.log( 'txhash1',  tx.transaction_hash);
         await provider.waitForTransaction(tx.transaction_hash);
 
         while (true) {
@@ -144,7 +145,7 @@ describe("NFT", function () {
         ])
 
         const tx = await acc.execute([mintCall], undefined, {
-            maxFee: 10**15
+            maxFee: 3 * (10**15)
         });
         await provider.waitForTransaction(tx.transaction_hash);
 
@@ -186,7 +187,7 @@ describe("NFT", function () {
         ])
 
         const tx = await acc.execute([mintCall], undefined, {
-            maxFee: 10**15
+            maxFee: 3 * (10**15)
         });
         await provider.waitForTransaction(tx.transaction_hash);
 
@@ -288,5 +289,6 @@ describe("NFT", function () {
         }
     })
 
-    
+    // test upgradeability, owner transfer and renounce
+
 })

@@ -2,7 +2,6 @@ import { v1alpha2 } from "https://esm.run/@apibara/starknet";
 import Contracts, { EventProcessors, getProcessorKey } from './contracts.ts';
 import { standariseAddress, toBigInt, toNumber } from "./utils.ts";
 
-console.log(Deno.env.get("POSTGRES_CONNECTION_STRING"))
 // Initiate a filter builder
 const filter: any = {
     events: [],
@@ -20,6 +19,7 @@ Object.keys(Contracts).forEach(category => {
         })
     })
 })
+
 export const config = {
     streamUrl: "https://mainnet.starknet.a5a.ch",
     startingBlock: Number(Deno.env.get("START_BLOCK")),

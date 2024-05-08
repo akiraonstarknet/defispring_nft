@@ -3,12 +3,15 @@ import { Image } from "@chakra-ui/image"
 import { Box, VStack, Text } from "@chakra-ui/layout"
 import NFTBg from '@public/nft_bg.png';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/modal";
-import { useAccount, useConnect } from "@starknet-react/core";
-import { Avatar, useDisclosure, Center } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useAccount, useConnect, useContractRead, useContractWrite, useProvider, useWaitForTransaction } from "@starknet-react/core";
+import { Avatar, useDisclosure, Center, Spinner, HStack } from "@chakra-ui/react";
+import { useEffect, useMemo, useState } from "react";
 import { useAtom, useAtomValue } from "jotai";
-import { levelsAtom, userDataAtom, userSTRKEarnedAtom } from "@/state.atoms";
-import { isIneligible, isIntractUser } from "@/utils";
+import { levelsAtom, statsAtom, userDataAtom, userSTRKEarnedAtom } from "@/state.atoms";
+import { LearnMoreLink, isClaimable, isIneligible, isIntractUser } from "@/utils";
+import { BlockTag, Contract } from "starknet";
+import NFTABI from '@public/nft.abi.json';
+import { isMobile } from "react-device-detect";
 
 interface NFTCardProps {
     level: number,
@@ -25,13 +28,42 @@ export default function NFTCard(props: NFTCardProps) {
     const levels = useAtomValue(levelsAtom);
     const userSTRK = useAtomValue(userSTRKEarnedAtom)
     const { connect, connectors } = useConnect();
+    const { provider } = useProvider();
     const [{ data, isPending, isError }] = useAtom(userDataAtom)
-
+    const [{ data: dataStats, isPending: isPendingStats, isError: isErrorStats }] = useAtom(statsAtom)
+    const [mintDone, setMintDone] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { isOpen: isOpenEligible, onOpen: onOpenEligible, onClose: onCloseEligible } = useDisclosure()
     const { isOpen: isOpenIntract, onOpen: onOpenIntract, onClose: onCloseIntract } = useDisclosure()
+    const { isOpen: isOpenMintComplete, onOpen: onOpenMintComplete, onClose: onCloseMintComplete } = useDisclosure()
     const [checkEligibility, setCheckEligibility] = useState(false);
 
+    const calls = useMemo(() => {
+        if (!data || !process.env.NEXT_PUBLIC_CONTRACT) return []
+        console.log('data', data)
+        const contract = new Contract(NFTABI, process.env.NEXT_PUBLIC_CONTRACT, provider);
+        const call = contract.populate("mint", {
+            rewardEarned: data?.signStrkAmount, 
+            hash: data?.hash, 
+            signature: data?.sig
+        });
+        return [call];
+    }, [provider, data])
+    const { writeAsync, isPending: isPendingTx, data: dataTx} = useContractWrite({
+        calls
+    })
+
+    const { isLoading: isLoadingTx, isError: isErrorTx, error: errorTx, data: dataTxStatus } = useWaitForTransaction({hash: dataTx?.transaction_hash, watch: true})
+
+    useEffect(() => {
+        console.log('tx status', dataTxStatus, isLoadingTx, isErrorTx)
+        if (dataTxStatus) {
+            if (dataTxStatus.statusReceipt == 'success' && !mintDone) {
+                onOpenMintComplete();
+                setMintDone(true);
+            }
+        }
+    }, [dataTxStatus, isLoadingTx, isErrorTx])
     const onCloseWalletConnect = () => {
         onClose()
         setCheckEligibility(true);
@@ -49,11 +81,21 @@ export default function NFTCard(props: NFTCardProps) {
         }
     }, [checkEligibility, address, userSTRK, data])
 
-    useEffect(() => {
-        if (!address) return;
+    const { data: dataIsClaimed, isError: isErrorClaimed, isLoading: isLoadingClaimed, error } = useContractRead({
+        functionName: "balanceOf",
+        args: [address as string, props.level],
+        abi: NFTABI,
+        address: process.env.NEXT_PUBLIC_CONTRACT || '',
+        watch: true,
+        blockIdentifier: BlockTag.pending
+    })
 
-        
-    }, [address])
+    function buttonText() {
+        if (Number(dataIsClaimed) > 0) {
+            return "Claimed"
+        }
+        return <>{!address && props.isClaimable ? "Connect" : "Mint NFT"} {((dataTx?.transaction_hash && isLoadingTx) || isPendingTx) && <Spinner size='sm' marginLeft='10px'/>}</>
+    }
 
     return <Box 
         width={'100%'} 
@@ -64,29 +106,31 @@ export default function NFTCard(props: NFTCardProps) {
         backgroundRepeat={'no-repeat'}
         backgroundSize={'cover'}
     >   
-        <VStack spacing={5}>
-            <Image src={props.image} alt={`NFT ${props.level}`} width={'100%'}
-                filter={props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
-            />
-            <Text color='white' textAlign='center'>Level {props.level}</Text>
-            <Button 
-                width={'100%'} 
-                variant={props.isClaimable ? 'base' : 'disabled'}
-                onClick={() => {
-                    if (props.isClaimable && !address) {
-                        onOpen();
-                    } else if (props.isClaimable) {
-                        // mintNFT();
-                    }
-                }}
-            >
-                Mint NFT
-            </Button>
-        </VStack>
+        <Image src={props.image} alt={`NFT ${props.level}`} width={'100%'}
+            filter={props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
+        />
+        <Text color='white' textAlign='center' margin={'15px 0'}>Level {props.level}</Text>
+        {isMobile && <Text color='primary' fontWeight={'bold'} fontSize='18px' textAlign='center' margin={'15px 0'}>{levels.filter(l => l.id == props.level)[0].amountSTRK.toLocaleString()} STRK</Text>}
+        {!isMobile && <Button 
+            width={'100%'} 
+            disabled={(props.isClaimable && (!address || Number(dataIsClaimed) == 0)) ? false : true}
+            variant={(props.isClaimable && (!address || Number(dataIsClaimed) == 0)) ? 'base' : 'disabled'}
+            onClick={() => {
+                if (props.isClaimable && !address) {
+                    onOpen();
+                } else if (props.isClaimable) {
+                    writeAsync();
+                }
+            }}
+        >   
+            {buttonText()}                
+        </Button>}
 
         {/* wallet popup */}
         <Modal isOpen={isOpen} onClose={onCloseWalletConnect}>
-            <ModalOverlay />
+            <ModalOverlay bg='blackAlpha.300'
+                backdropFilter='auto'
+                backdropBlur='5px'/>
             <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'550px'}>
                 <ModalCloseButton color='bg_light' onClick={onClose} />
                 <ModalBody padding={'40px 80px'}>
@@ -128,7 +172,9 @@ export default function NFTCard(props: NFTCardProps) {
 
         {/* ineligible popup */}
         <Modal isOpen={isOpenEligible} onClose={() => {}}>
-            <ModalOverlay />
+            <ModalOverlay bg='blackAlpha.300'
+                backdropFilter='auto'
+                backdropBlur='5px'/>
             <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'550px'}>
                 <ModalBody padding={'40px 80px'}>
                     <Text 
@@ -154,9 +200,11 @@ export default function NFTCard(props: NFTCardProps) {
             </ModalContent>
         </Modal>
 
-        {/* interact level 2 users // todo do not show if already >= level 2 or has enogh level 2 amount*/}
+        {/* interact level 2 users*/}
         <Modal isOpen={isOpenIntract} onClose={() => {}}>
-            <ModalOverlay />
+            <ModalOverlay bg='blackAlpha.300'
+                backdropFilter='auto'
+                backdropBlur='5px'/>
             <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'550px'}>
                 <ModalBody padding={'40px 80px'}>
                     <Text 
@@ -184,6 +232,78 @@ export default function NFTCard(props: NFTCardProps) {
                     >{"You are auto-qualified for Level 2 for previously completing a Quest on intract".toUpperCase()}</Text>
                     <hr color='var(--chakra-colors-blue)' className="marginV20"/>
                     <Center width={'100%'}><Button variant='base' onClick={onCloseIntract}>Continue</Button></Center>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+
+        {/* Mint complete */}
+        <Modal isOpen={isOpenMintComplete} onClose={() => {}}>
+            <ModalOverlay 
+                bg='blackAlpha.300'
+                backdropFilter='auto'
+                backdropBlur='5px'
+            />
+            <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'850px'}>
+                <ModalBody padding={'40px 80px'}>
+                    <Text 
+                        color='primary'
+                        textAlign={'center'} 
+                        fontSize={'49px'} 
+                        className={'nbe-font'}
+                        lineHeight={'100%'}
+                        letterSpacing={'2.4px'}
+                    >MINT COMPLETE</Text>
+                    <hr color='var(--chakra-colors-blue)' className="marginV20"/>
+                    <HStack spacing={5} width='100%'>
+                        {
+                            levels.map((level) => (
+                                <Image 
+                                    width={'25%'}
+                                    src={level.nftSrc}
+                                    key={level.id}
+                                    filter={isClaimable(
+                                        address, userSTRK, level, levels, data
+                                    ) ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
+                                />
+                            ))
+                        }
+                    </HStack>
+                    <hr className="marginV20"/>
+                    {/* level 4 < */}
+                    {props.level < 4 && <>
+                        <Text 
+                            color='bg_light'
+                            textAlign={'center'} 
+                            fontSize={'14px'} 
+                            marginBottom={'10px'}
+                        >YOU REACHED</Text>
+                        <Text 
+                            color='primary'
+                            textAlign={'center'} 
+                            fontSize={'48px'} 
+                            className={'nbe-font'}
+                            lineHeight={'100%'}
+                            letterSpacing={'2.4px'}
+                        >LEVEL {props.level}</Text>
+                        <hr color='var(--chakra-colors-blue)' className="marginV20"/>
+                    </>}
+
+                    {/* levle 4 */}
+                    {props.level == 4 && <HStack>
+                        <Box width='50%'>
+                            <Text color='bg_light' fontSize={'14px'} textAlign={'center'}>PARTICIPANTS</Text>
+                            <Text color='blue_text' fontWeight={'700'} fontSize={'48px'} textAlign={'center'}>{dataStats ? dataStats.totalParticipants.toLocaleString() : (isPendingStats ? <Spinner size='sm'/> : 'Err')}</Text>
+                        </Box>
+                        <Box width='50%'>
+                            {/* TODO ADD TVL */}
+                            <Text color='bg_light' fontSize={'14px'} textAlign={'center'}>STARKNET TVL</Text>
+                            <Text color='blue_text' fontWeight={'700'} fontSize={'48px'} textAlign={'center'}>${dataStats ? dataStats.totalParticipants.toLocaleString() : (isPendingStats ? <Spinner size='sm'/> : 'Err')}</Text>
+                        </Box>
+                    </HStack>}
+                    <Center width={'100%'}>
+                        <Button variant='base' as='a' href={LearnMoreLink()} target="_blank" width='150px'>Learn more</Button>
+                        {props.level < 4 && <Button variant='base' marginLeft={'20px'} width='150px' onClick={onCloseMintComplete}>Return</Button>}
+                    </Center>
                 </ModalBody>
             </ModalContent>
         </Modal>

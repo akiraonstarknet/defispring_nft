@@ -9,6 +9,7 @@ import {
   braavos,
   useInjectedConnectors,
   jsonRpcProvider,
+  useAccount,
 } from '@starknet-react/core';
 import {
   background,
@@ -16,7 +17,7 @@ import {
   extendTheme,
   StyleFunctionProps,
 } from '@chakra-ui/react';
-import { RpcProviderOptions, constants } from 'starknet';
+import { BlockTag, RpcProviderOptions, constants } from 'starknet';
 
 const theme = extendTheme({
     colors: {
@@ -92,9 +93,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const provider = jsonRpcProvider({
     rpc: (chain) => {
       const args: RpcProviderOptions = {
-        nodeUrl:
-          'url',
-        chainId: constants.StarknetChainId.SN_MAIN,
+        nodeUrl: process.env.NEXT_PUBLIC_RPC_URL,
+        chainId: process.env.NEXT_PUBLIC_CHAIN_ID == '0x534e5f5345504f4c4941' ? constants.StarknetChainId.SN_SEPOLIA : constants.StarknetChainId.SN_MAIN,
+        blockIdentifier: BlockTag.pending
       };
       return args;
     },

@@ -20,9 +20,11 @@
     "jotai": "^2.8.0",
     "jotai-tanstack-query": "^0.8.5",
     "next": "14.2.3",
+    "postgresql-client": "^2.11.0",
     "react": "^18",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18",
-    "starknet": "^5.24.3",
+    "starknet": "^6.8.0",
     "wonka": "^6.3.4"
   },
   "devDependencies": {

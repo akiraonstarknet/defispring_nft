@@ -52,5 +52,6 @@ div[target="progressbar"] {
 }
 
 .marginV20 {
-  margin: 20px 0
+  margin: 20px 0;
+  border-color: var(--chakra-colors-blue);
 }

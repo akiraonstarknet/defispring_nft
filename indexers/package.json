@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "apibara indexers to index DeFi Spring $STRK claim data",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
+    "get_synced_block": "tsx src/get_synced_block.ts",
+    "start": "apibara run --allow-env=.env src/indexer.ts --sink-id=1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "akiraonstarknet",
@@ -32,6 +33,7 @@
     "sucrase": "^3.35.0",
     "ts-node": "10.9.1",
     "tsify": "^5.0.4",
+    "tsx": "^4.9.1",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.6.0"
   }

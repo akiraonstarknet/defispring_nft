@@ -57,7 +57,7 @@ export async function myDeclare(contract_name: string) {
     // console.log('declare fee', Number(fee.suggestedMaxFee) / 10 ** 18, 'ETH')
     
     const tx = await acc.declareIfNot(payload, {
-        maxFee: 10**15
+        maxFee: 3 * 10**15
     })
     if (tx.transaction_hash) {
         console.log(`Declaring: ${contract_name}`, tx.transaction_hash);
@@ -92,7 +92,7 @@ export async function deployContract(contract_name: string, classHash: string, c
         classHash,
         constructorCalldata: constructorData,
     }, {
-        maxFee: 10**15
+        maxFee: 3 * (10**15)
     })
     console.log('Deploy tx: ', tx.transaction_hash);
     await provider.waitForTransaction(tx.transaction_hash, {

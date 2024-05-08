@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import IntractUsers from '@public/intractusers.json';
 import { ec, hash, num } from "starknet";
 import {Connection} from 'postgresql-client';
-import { LEVELS } from "@/utils";
+import { LEVELS, isIntractUser } from "@/utils";
 
 export const revalidate = 0;
 
@@ -25,6 +25,16 @@ export async function GET(req: Request, context: any) {
         throw new Error('Invalid address');
     }
 
+    const mocks = {
+        l1: [
+            "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira
+            standariseAddress('0x0546EDeAf1f31e30F9B5dC88eD638e62F38992A18d4bc61B5A4351546CeeFAbd'), // damian
+        ],
+        l4: [
+            standariseAddress('0x044B69c21c81220D8F635526aaC87083a692c9228A30471727d190924AAF4Ed0'), // damian
+            standariseAddress('0x03a22a9e61d2edcefd604c3a7dc2a57d7629f4321537243e7682fe7fa07546c5') // akira
+        ]
+    }
     // test TODO remove before commit
     let queryAddr = pAddr;
     if (addr == '0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99') {
@@ -35,11 +45,10 @@ export async function GET(req: Request, context: any) {
         throw new Error('Invalid signer');
     }
 
-    let strkAmount = BigInt(10000 * (10 ** 18));
-
     const result = await connection.query(
         `select claimee, amount from claims where claimee='${queryAddr}'`);
     
+    let strkAmount = BigInt(0);
     if(result.rows) {
         const rows: any[] = result.rows;
         console.log('rows', queryAddr, rows);
@@ -52,7 +61,15 @@ export async function GET(req: Request, context: any) {
         })
     }
 
-    const isInteractUser = (<any>IntractUsers)[pAddr] ? true : false;
+    let isInteractUser = (<any>IntractUsers)[pAddr] ? true : false;
+
+    // mocks
+    if (mocks.l1.includes(pAddr)) {
+        strkAmount = BigInt(LEVELS[0].amountSTRK * (10 ** 18));
+        isInteractUser = true;
+    } else if (mocks.l4.includes(pAddr)) {
+        strkAmount = BigInt(LEVELS[3].amountSTRK * (10 ** 18));
+    }
 
     // this allows to sign a sig that allows user to mint upto level 2 NFT
     // without STRK

@@ -28,7 +28,7 @@ export const config = {
     filter: filter,
     sinkType: "postgres",
     sinkOptions: {
-        noTls: false,
+        noTls: true, // true for private urls, false for public urls
         tableName: "claims",
     },
 };

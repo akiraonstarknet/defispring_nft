@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import IntractUsers from '@public/intractusers.json';
 import { ec, hash, num } from "starknet";
-import {Connection} from 'postgresql-client';
 import { LEVELS, isIntractUser } from "@/utils";
+import BigNumber from "bignumber.js";
+import {Connection} from 'postgresql-client';
+import { getConnection } from "../../utils";
 
 export const revalidate = 0;
 
@@ -10,25 +12,12 @@ function standariseAddress(address: string | bigint) {
     return num.getHexString(num.getDecimalString(address.toString()));
 }
 
-BigInt.prototype.toJSON = function () {
-    return this.toString();
-};
+const tenPow18 = new BigNumber(10).pow(18);
 
 export async function GET(req: Request, context: any) {
     let connection: Connection | null = null;
     try {
-        connection = new Connection({
-            host: process.env.DATABASE_HOSTNAME,
-            port: 5432,
-            user: process.env.DATABASE_USERNAME,
-            password: process.env.DATABASE_PASSWORD,
-            database: process.env.DATABASE_DB,
-            ssl: {
-                host: process.env.DATABASE_HOSTNAME,
-                port: 5432,
-            }
-        });
-        await connection.connect();
+        connection = await getConnection();
 
         const { params } = context;
         const addr = params.address;
@@ -91,12 +80,12 @@ export async function GET(req: Request, context: any) {
         const result = await connection.query(
             `select claimee, amount from claims where claimee='${queryAddr}'`);
         
-        let strkAmount = BigInt(0);
+        let strkAmount = new BigNumber(0);
         if(result.rows) {
             const rows: any[] = result.rows;
             console.log('rows', queryAddr, rows);
             rows.forEach(row => {
-                strkAmount += BigInt(row[1]);
+                strkAmount = strkAmount.plus(row[1]);
             }) 
         } else {
             console.log('noData', {
@@ -107,48 +96,54 @@ export async function GET(req: Request, context: any) {
         let isInteractUser = (<any>IntractUsers)[pAddr] ? true : false;
 
         // mocks
+        console.log('pAddr', pAddr, mocks.l4.includes(pAddr))
         if (mocks.l1.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[0].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[0].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = false;
         } else if(mocks.l2.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[1].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[1].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = false;
         } else if (mocks.l3.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[2].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[2].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = false;
         } else if (mocks.l4.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[3].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[3].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = false;
         } else if (mocks.l0.includes(pAddr)) {
-            strkAmount = BigInt(0);
+            strkAmount = new BigNumber(0);
             isInteractUser = false;
         }
 
         if (interactMocks.l1.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[0].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[0].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = true;
         } else if(interactMocks.l2.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[1].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[1].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = true;
         } else if (interactMocks.l3.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[2].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[2].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = true;
         } else if (interactMocks.l4.includes(pAddr)) {
-            strkAmount = BigInt(LEVELS[3].amountSTRK * (10 ** 18));
+            strkAmount = new BigNumber(LEVELS[3].amountSTRK).multipliedBy(tenPow18);
             isInteractUser = true;
         } else if (interactMocks.l0.includes(pAddr)) {
-            strkAmount = BigInt(0);
+            strkAmount = new BigNumber(0);
             isInteractUser = true;
         }
 
         // this allows to sign a sig that allows user to mint upto level 2 NFT
         // without STRK
         let signStrkAmount = strkAmount;
-        if (isInteractUser && strkAmount < BigInt(LEVELS[1].amountSTRK * (10 ** 18))) {
-            signStrkAmount = BigInt(LEVELS[1].amountSTRK * (10 ** 18));
+        if (isInteractUser && strkAmount.lt(new BigNumber(LEVELS[1].amountSTRK).multipliedBy(tenPow18))) {
+            signStrkAmount = new BigNumber(LEVELS[1].amountSTRK * (10 ** 18));
         }
-
-        const hash1 = hash.computePedersenHash(pAddr, signStrkAmount);
+        
+        console.log('pAddr info', {
+            signStrkAmount: signStrkAmount.toFixed(0),
+            strkAmount: strkAmount.toFixed(0),
+            isIntractUser: isInteractUser
+        })
+        const hash1 = hash.computePedersenHash(pAddr, signStrkAmount.toFixed(0));
             
         const sig = ec.starkCurve.sign(hash1, process.env.ACCOUNT_PK);
 
@@ -156,8 +151,8 @@ export async function GET(req: Request, context: any) {
         return NextResponse.json({
             address: pAddr,
             isIntractUser: isInteractUser,
-            strkEarned: strkAmount.toString(),
-            signStrkAmount: signStrkAmount.toString(),
+            strkEarned: strkAmount.toFixed(),
+            signStrkAmount: signStrkAmount.toFixed(),
             hash: hash1,
             sig: [sig.r, sig.s] 
         })

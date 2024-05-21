@@ -3,6 +3,7 @@ import NFT1 from '@public/nfts/nft1.png'
 import NFT2 from '@public/nfts/nft2.png'
 import NFT3 from '@public/nfts/nft3.png'
 import NFT4 from '@public/nfts/nft4.png'
+import {Connection} from 'postgresql-client';
 
 export const LEVELS = [{
     id: 1,
@@ -39,3 +40,4 @@ export function isClaimable(address: string | undefined, strkEarned: number, lev
 export function LearnMoreLink() {
     return "https://google.com"
 }
+

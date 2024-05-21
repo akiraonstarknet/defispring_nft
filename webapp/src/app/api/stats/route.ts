@@ -2,24 +2,14 @@ import { NextResponse } from "next/server";
 import IntractUsers from '@public/intractusers.json';
 import { ec, hash, num } from "starknet";
 import {Connection} from 'postgresql-client';
+import { getConnection } from "../utils";
 
 export const revalidate = 3600; // 1 hr
 export async function GET(req: Request) {
     let connection: Connection | null = null;
 
     try {
-        connection = new Connection({
-            host: process.env.DATABASE_HOSTNAME,
-            port: 5432,
-            user: process.env.DATABASE_USERNAME,
-            password: process.env.DATABASE_PASSWORD,
-            database: process.env.DATABASE_DB,
-            ssl: {
-                host: process.env.DATABASE_HOSTNAME,
-                port: 5432,
-            }
-        });
-        await connection.connect();
+        connection = await getConnection();
 
         const result = await connection.query(
             `SELECT COUNT(*) FROM (SELECT DISTINCT claimee FROM claims) AS temp`);

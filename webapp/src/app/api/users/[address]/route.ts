@@ -10,6 +10,10 @@ function standariseAddress(address: string | bigint) {
     return num.getHexString(num.getDecimalString(address.toString()));
 }
 
+BigInt.prototype.toJSON = function () {
+    return this.toString();
+};
+
 export async function GET(req: Request, context: any) {
     let connection: Connection | null = null;
     try {

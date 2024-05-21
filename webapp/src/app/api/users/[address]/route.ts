@@ -42,13 +42,40 @@ export async function GET(req: Request, context: any) {
         }
 
         const mocks = {
-            l1: [
-                "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira
+            l0: [
                 standariseAddress('0x0546EDeAf1f31e30F9B5dC88eD638e62F38992A18d4bc61B5A4351546CeeFAbd'), // damian
             ],
-            l4: [
+            l1: [
+                "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira
                 standariseAddress('0x044B69c21c81220D8F635526aaC87083a692c9228A30471727d190924AAF4Ed0'), // damian
-                standariseAddress('0x03a22a9e61d2edcefd604c3a7dc2a57d7629f4321537243e7682fe7fa07546c5') // akira
+            ],
+            l2: [
+                standariseAddress('0x06738C94e72c19F2EEA8deb5E6e9ab8dFecFb462dC6906E6542A30BF179594ef'), // damian
+            ],
+            l3: [
+                standariseAddress('0x07c35c66a72965f2e1d1714f25bba835794D7FEf57eceC333574e311014B5746'), // damian
+            ],
+            l4: [
+                standariseAddress('0x03a22a9e61d2edcefd604c3a7dc2a57d7629f4321537243e7682fe7fa07546c5'), // akira
+                standariseAddress('0x07bD5c57173EeADd4511D5563b209cd011425cbfB0301DB4646F76CBB21c908F'), // damian
+            ]
+        }
+
+        const interactMocks = {
+            l0: [
+                standariseAddress('0x0581C97C285eb3b467E193713A97CabD51fd23f976D3982aF10Ab941A0E85360'), // damian
+            ],
+            l1: [
+                standariseAddress('0x0239e533E9E8675f9520bD485100558a9e5163a6830Ea43C96de5109AFc78C6a'), // damian
+            ],
+            l2: [
+                standariseAddress('0x048eDAac7E8e21944b328ca61719c5A9DCAC85436632491A990Dd2D40D518135'), // damian
+            ],
+            l3: [
+                standariseAddress('0x04309a532DAd66E93B1ec02b70dF60146055265DD32dC4C7945deec4DA03b9e6'), // damian
+            ],
+            l4: [
+                standariseAddress('0x020917F162FEcAE3DF545e965a3f09F8Cd15B6e2aa37483bB6FAFEeF4f14aDD7'), // damian
             ]
         }
         // test TODO remove before commit
@@ -82,9 +109,36 @@ export async function GET(req: Request, context: any) {
         // mocks
         if (mocks.l1.includes(pAddr)) {
             strkAmount = BigInt(LEVELS[0].amountSTRK * (10 ** 18));
-            isInteractUser = true;
+            isInteractUser = false;
+        } else if(mocks.l2.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[1].amountSTRK * (10 ** 18));
+            isInteractUser = false;
+        } else if (mocks.l3.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[2].amountSTRK * (10 ** 18));
+            isInteractUser = false;
         } else if (mocks.l4.includes(pAddr)) {
             strkAmount = BigInt(LEVELS[3].amountSTRK * (10 ** 18));
+            isInteractUser = false;
+        } else if (mocks.l0.includes(pAddr)) {
+            strkAmount = BigInt(0);
+            isInteractUser = false;
+        }
+
+        if (interactMocks.l1.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[0].amountSTRK * (10 ** 18));
+            isInteractUser = true;
+        } else if(interactMocks.l2.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[1].amountSTRK * (10 ** 18));
+            isInteractUser = true;
+        } else if (interactMocks.l3.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[2].amountSTRK * (10 ** 18));
+            isInteractUser = true;
+        } else if (interactMocks.l4.includes(pAddr)) {
+            strkAmount = BigInt(LEVELS[3].amountSTRK * (10 ** 18));
+            isInteractUser = true;
+        } else if (interactMocks.l0.includes(pAddr)) {
+            strkAmount = BigInt(0);
+            isInteractUser = true;
         }
 
         // this allows to sign a sig that allows user to mint upto level 2 NFT

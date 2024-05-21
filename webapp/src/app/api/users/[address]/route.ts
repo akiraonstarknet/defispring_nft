@@ -154,7 +154,7 @@ export async function GET(req: Request, context: any) {
             strkEarned: strkAmount.toFixed(),
             signStrkAmount: signStrkAmount.toFixed(),
             hash: hash1,
-            sig: [sig.r, sig.s] 
+            sig: [sig.r.toString(), sig.s.toString()] 
         })
     } catch(err) {
         console.error('Error /api/users/:address', err);

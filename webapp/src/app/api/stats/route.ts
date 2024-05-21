@@ -20,11 +20,13 @@ export async function GET(req: Request) {
             connection.close();
             return NextResponse.json({
                 totalParticipants: rows[0][0],
+                tvl: '288.43m'
             })
         } else {
             connection.close();
             return NextResponse.json({
                 totalParticipants: 0,
+                tvl: '288.43m'
             })
         }
     } catch(err) {
@@ -33,6 +35,7 @@ export async function GET(req: Request) {
             connection.close();
         return NextResponse.json({
             totalParticipants: 0,
+            tvl: '0'
         })
     }
 }

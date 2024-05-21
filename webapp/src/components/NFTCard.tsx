@@ -297,7 +297,7 @@ export default function NFTCard(props: NFTCardProps) {
                         <Box width='50%'>
                             {/* TODO ADD TVL */}
                             <Text color='bg_light' fontSize={'14px'} textAlign={'center'}>STARKNET TVL</Text>
-                            <Text color='blue_text' fontWeight={'700'} fontSize={'48px'} textAlign={'center'}>${dataStats ? dataStats.totalParticipants.toLocaleString() : (isPendingStats ? <Spinner size='sm'/> : 'Err')}</Text>
+                            <Text color='blue_text' fontWeight={'700'} fontSize={'48px'} textAlign={'center'}>${dataStats ? dataStats.tvl : (isPendingStats ? <Spinner size='sm'/> : 'Err')}</Text>
                         </Box>
                     </HStack>}
                     <Center width={'100%'}>

@@ -34,7 +34,8 @@ export const userDataAtom = atomWithQuery<UserData | null>((get) => ({
 }))
 
 export interface StatsData {
-    totalParticipants: number
+    totalParticipants: number,
+    tvl: string,
 }
 export const statsAtom = atomWithQuery<StatsData | null>((get) => ({
     queryKey: ['stats'],

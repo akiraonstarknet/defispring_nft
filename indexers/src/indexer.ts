@@ -28,7 +28,7 @@ export const config = {
     filter: filter,
     sinkType: "postgres",
     sinkOptions: {
-        noTls: true,
+        noTls: false,
         tableName: "claims",
     },
 };

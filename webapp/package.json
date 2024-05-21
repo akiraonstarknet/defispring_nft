@@ -16,6 +16,7 @@
     "@emotion/styled": "^11.11.5",
     "@starknet-react/core": "^2.6.1",
     "@tanstack/query-core": "^5.32.0",
+    "bignumber.js": "^9.1.2",
     "framer-motion": "^11.1.7",
     "jotai": "^2.8.0",
     "jotai-tanstack-query": "^0.8.5",

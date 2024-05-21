@@ -2,24 +2,14 @@ import { NextResponse } from "next/server";
 import IntractUsers from '@public/intractusers.json';
 import { RpcProvider, ec, hash, num } from "starknet";
 import {Connection} from 'postgresql-client';
+import { getConnection } from "../utils";
 
 export const revalidate = 60; // 1min
 export async function GET(req: Request) {
     console.log('requesting1')
     let connection: Connection | null = null;
     try {
-        connection = new Connection({
-            host: process.env.DATABASE_HOSTNAME,
-            port: 5432,
-            user: process.env.DATABASE_USERNAME,
-            password: process.env.DATABASE_PASSWORD,
-            database: process.env.DATABASE_DB,
-            ssl: {
-                host: process.env.DATABASE_HOSTNAME,
-                port: 5432,
-            }
-        });
-        await connection.connect();
+        connection = await getConnection();
         // @todo modify this to use the rpc provider from .env
         const provider = new RpcProvider({
             // nodeUrl: process.env.RPC_URL,

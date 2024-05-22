@@ -35,7 +35,6 @@ export async function GET(req: Request, context: any) {
                 standariseAddress('0x0546EDeAf1f31e30F9B5dC88eD638e62F38992A18d4bc61B5A4351546CeeFAbd'), // damian
             ],
             l1: [
-                "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira
                 standariseAddress('0x044B69c21c81220D8F635526aaC87083a692c9228A30471727d190924AAF4Ed0'), // damian
             ],
             l2: [
@@ -64,6 +63,7 @@ export async function GET(req: Request, context: any) {
                 standariseAddress('0x04309a532DAd66E93B1ec02b70dF60146055265DD32dC4C7945deec4DA03b9e6'), // damian
             ],
             l4: [
+                "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira
                 standariseAddress('0x020917F162FEcAE3DF545e965a3f09F8Cd15B6e2aa37483bB6FAFEeF4f14aDD7'), // damian
             ]
         }

@@ -1,13 +1,10 @@
 use starknet::{ClassHash};
 
-#[derive(Drop, Serde, starknet::Store, starknet::Event)]
+#[derive(Drop, Serde, starknet::Event)]
 pub struct Settings {
     pub maxNFTs: u8, // 4 NFTs fix as of now
     // defined limit for eachNFT
-    pub minEarning1: u128,
-    pub minEarning2: u128,
-    pub minEarning3: u128,
-    pub minEarning4: u128,
+    pub minEarnings: Array<u128>
 }
 
 #[starknet::interface]
@@ -16,6 +13,7 @@ pub trait IDeFiSpringNFT<TState> {
     fn symbol(self: @TState) -> ByteArray;
     fn mint(
         ref self: TState,
+        nftId: u8,
         rewardEarned: u128, 
         hash: felt252, 
         signature: Array<felt252>
@@ -76,7 +74,8 @@ mod DeFiSpringNFT {
 
         name: ByteArray,
         symbol: ByteArray,
-        settings: Settings,
+        maxNFTs: u8,
+        minEarnings:  LegacyMap::<u8, u128>, // nftId to minEarning map
 
         // a pubkey for offchain signing to auth before NFT mint
         pubkey: felt252,
@@ -115,7 +114,7 @@ mod DeFiSpringNFT {
         self.name.write(name);
         self.symbol.write(symbol);
         self.pubkey.write(pubkey);
-        self.settings.write(settings);
+        self._set_settings(settings);
     }
 
     #[abi(embed_v0)]
@@ -139,7 +138,19 @@ mod DeFiSpringNFT {
         }
 
         fn get_settings(self: @ContractState) -> Settings {
-            self.settings.read()
+            let mut settings = Settings {
+                maxNFTs: self.maxNFTs.read(),
+                minEarnings: array![]
+            };
+            let mut count: u8 = 0;
+            loop {
+                settings.minEarnings.append(self.minEarnings.read(count));
+                count += 1;
+                if (count == settings.maxNFTs) {
+                    break;
+                }
+            };
+            settings
         }
 
         fn set_pubkey(ref self: ContractState, pubkey: felt252) {
@@ -151,9 +162,9 @@ mod DeFiSpringNFT {
             self.pubkey.read()
         }
 
-        fn mint(ref self: ContractState, rewardEarned: u128, hash: felt252, signature: Array<felt252>) {
+        fn mint(ref self: ContractState, nftId: u8, rewardEarned: u128, hash: felt252, signature: Array<felt252>) {
             assert(signature.len() == 2, 'Invalid signatures len');
-
+            assert(nftId >= 1 && nftId <= self.maxNFTs.read(), 'Invalid nftId');
             self._verify_hash(hash, rewardEarned);
 
             let verified = check_ecdsa_signature(
@@ -164,13 +175,16 @@ mod DeFiSpringNFT {
             );
             assert(verified, 'Invalid signature');
 
-            let settings = self.settings.read();
             let caller = get_caller_address();
 
-            let isMint = self._check_and_mint(1, settings.minEarning1, rewardEarned, caller, false);
-            let isMint = self._check_and_mint(2, settings.minEarning2, rewardEarned, caller, isMint);
-            let isMint = self._check_and_mint(3, settings.minEarning3, rewardEarned, caller, isMint);
-            let isMint = self._check_and_mint(4, settings.minEarning4, rewardEarned, caller, isMint);
+            let minEarning = self.minEarnings.read(nftId - 1);
+            let isMint = self._check_and_mint(
+                nftId, 
+                minEarning, 
+                rewardEarned, 
+                caller, 
+                false
+            );
 
             // ensures user doesnt call contract multiple times 
             // if they aren't eligible for a new NFT yet
@@ -187,7 +201,15 @@ mod DeFiSpringNFT {
 
         fn _set_settings(ref self: ContractState, settings: Settings) {
             assert(settings.maxNFTs == 4, 'Invalid maxNFTs');
-            self.settings.write(settings);
+            self.maxNFTs.write(settings.maxNFTs);
+            let mut count: u8 = 0;
+            loop {
+                self.minEarnings.write(count, *settings.minEarnings.at(count.into()));
+                count += 1;
+                if (count == settings.maxNFTs) {
+                    break;
+                }
+            };
         }
 
         fn _verify_hash(ref self: ContractState, hash: felt252, amount: u128) {
@@ -200,20 +222,21 @@ mod DeFiSpringNFT {
         // returns true if a mint happens now or already happened
         fn _check_and_mint(
             ref self: ContractState,
-            nftId: u256,
+            nftId: u8,
             minReward: u128,
             rewardEarned: u128,
             caller: ContractAddress,
             isMint: bool
         ) -> bool {
+            assert(minReward > 0, 'Invalid minReward');
             if (minReward > rewardEarned) {
                 return isMint;
             }
 
-            let balance = self.erc1155.balanceOf(caller, nftId);
+            let balance = self.erc1155.balanceOf(caller, nftId.into());
             if (balance == 0) {
                 // mint only if no prior balance
-                let tokenIds = array![nftId];
+                let tokenIds: Array<u256> = array![nftId.into()];
                 let values = array![1];
                 self.erc1155.update(
                     Zero::zero(),

@@ -20,10 +20,12 @@ describe("NFT", function () {
             owner: acc.address,
             settings: {
                 maxNFTs: 4,
-                minEarning1: 10 * (10**18),
-                minEarning2: "100000000000000000000",
-                minEarning3: "1000000000000000000000",
-                minEarning4: "10000000000000000000000",
+                minEarnings: [
+                    10 * (10**18),
+                    "100000000000000000000",
+                    "1000000000000000000000",
+                    "10000000000000000000000",
+                ]
             },
             pubkey: await acc.signer.getPubKey()
         })
@@ -69,10 +71,11 @@ describe("NFT", function () {
 
         let settings: any = await contract.call("get_settings", []);
         expect(Number(settings.maxNFTs)).toBe(4);
-        expect(Number(settings.minEarning1)).toBe(10 * (10**18));
-        expect(Number(settings.minEarning2)).toBe(100 * (10**18));
-        expect(Number(settings.minEarning3)).toBe(1000 * (10**18));
-        expect(Number(settings.minEarning4)).toBe(10000 * (10**18));
+        console.log(settings.minEarnings)
+        expect(Number(settings.minEarnings[0])).toBe(10 * (10**18));
+        expect(Number(settings.minEarnings[1])).toBe(100 * (10**18));
+        expect(Number(settings.minEarnings[2])).toBe(1000 * (10**18));
+        expect(Number(settings.minEarnings[3])).toBe(10000 * (10**18));
 
         let pubkey: any = await contract.call("get_pubkey", []);
         expect(num.getHexString(pubkey)).toBe(await acc.signer.getPubKey());
@@ -99,6 +102,7 @@ describe("NFT", function () {
         expect(Number(preBal)).toBe(0);
 
         let mintCall = contract.populate("mint", [
+            1,
             level1Amount,
             hash1,
             [sig.r, sig.s],
@@ -139,6 +143,7 @@ describe("NFT", function () {
         expect(Number(preBal2)).toBe(0);
 
         let mintCall = contract.populate("mint", [
+            1,
             level2Amount,
             hash1,
             [sig.r, sig.s],
@@ -153,7 +158,7 @@ describe("NFT", function () {
             let postBal = await contract.balanceOf(acc.address, 1);
             if (Number(postBal) === 1) {
                 let postBal2 = await contract.balanceOf(acc.address, 2);
-                if (Number(postBal2) === 1) {
+                if (Number(postBal2) === 0) {
                     break;
                 }
             }
@@ -166,7 +171,7 @@ describe("NFT", function () {
 
     it("Mint: Should pass boundary test", async () => {
         let contract = await deploy(classhash);
-        let level2Amount = "98999999999999999999";
+        let level2Amount = "9999999999999999999";
         const hash1 = hash.computePedersenHash(acc.address, "98999999999999999999");
         
         let data = JSON.parse(readFileSync(`${process.env.SECRET_FILE_FOLDER}/account_${process.env.NETWORK}.json`, {
@@ -181,6 +186,7 @@ describe("NFT", function () {
         expect(Number(preBal2)).toBe(0);
 
         let mintCall = contract.populate("mint", [
+            1,
             level2Amount,
             hash1,
             [sig.r, sig.s],
@@ -194,12 +200,8 @@ describe("NFT", function () {
         while (true) {
             let postBal = await contract.balanceOf(acc.address, 1);
             console.log("Post balance", postBal);
-            if (Number(postBal) === 1) {
-                let postBal2 = await contract.balanceOf(acc.address, 2);
-                console.log("Post balance 2", postBal2);
-                if (Number(postBal2) === 0) {
-                    break;
-                }
+            if (Number(postBal) === 0) {
+                break;
             }
             console.log('Waiting for minting to complete...')
             await new Promise(resolve => setTimeout(resolve, 5000));
@@ -219,6 +221,7 @@ describe("NFT", function () {
         const sig = ec.starkCurve.sign(hash1, data.pk);
 
         let mintCall = contract.populate("mint", [
+            1,
             level1Amount * 2,
             hash1,
             [sig.r, sig.s],
@@ -246,6 +249,7 @@ describe("NFT", function () {
         const sig = ec.starkCurve.sign(hash1, data.pk);
 
         let mintCall = contract.populate("mint", [
+            1,
             level1Amount,
             hash1,
             [sig.r, sig.r],
@@ -263,8 +267,8 @@ describe("NFT", function () {
     })
 
     it("Mint: Should fail Not eligible", async () => {
-        let level1Amount = 1 * (10**18);
-        const hash1 = hash.computePedersenHash(acc.address, "1000000000000000000");
+        let level1Amount = "10000000000000000000";
+        const hash1 = hash.computePedersenHash(acc.address, level1Amount);
         
         let data = JSON.parse(readFileSync(`${process.env.SECRET_FILE_FOLDER}/account_${process.env.NETWORK}.json`, {
             encoding: 'utf-8'
@@ -273,6 +277,7 @@ describe("NFT", function () {
         const sig = ec.starkCurve.sign(hash1, data.pk);
 
         let mintCall = contract.populate("mint", [
+            2,
             level1Amount,
             hash1,
             [sig.r, sig.s],

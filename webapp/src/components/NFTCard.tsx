@@ -118,7 +118,8 @@ export default function NFTCard(props: NFTCardProps) {
             style={{
                 width: '100%',
                 height: 'auto',
-                filter: props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'
+                filter: props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)',
+                cursor: 'pointer'
             }}
             onClick={() => props.isClaimable && onOpenImage()}
         />
@@ -317,9 +318,10 @@ export default function NFTCard(props: NFTCardProps) {
                                     style={{
                                         width: '23.2%',
                                         height: 'auto',
-                                        cursor: isClaimable(
+                                        filter: isClaimable(
                                             address, userSTRK, level, levels, data
-                                        ) ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'
+                                        ) ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)',
+                                        cursor: 'pointer'
                                     }}
                                 />
                             ))

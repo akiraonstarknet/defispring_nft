@@ -1,5 +1,5 @@
 import { Button } from "@chakra-ui/button"
-import { Image } from "@chakra-ui/image"
+import Image from 'next/image'
 import { Box, VStack, Text } from "@chakra-ui/layout"
 import NFTBg from '@public/nft_bg.png';
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/modal";
@@ -36,6 +36,7 @@ export default function NFTCard(props: NFTCardProps) {
     const { isOpen: isOpenEligible, onOpen: onOpenEligible, onClose: onCloseEligible } = useDisclosure()
     const { isOpen: isOpenIntract, onOpen: onOpenIntract, onClose: onCloseIntract } = useDisclosure()
     const { isOpen: isOpenMintComplete, onOpen: onOpenMintComplete, onClose: onCloseMintComplete } = useDisclosure()
+    const { isOpen: isOpenImage, onOpen: onOpenImage, onClose: onCloseImage } = useDisclosure()
     const [checkEligibility, setCheckEligibility] = useState(false);
 
     const calls = useMemo(() => {
@@ -43,6 +44,7 @@ export default function NFTCard(props: NFTCardProps) {
         console.log('data', data)
         const contract = new Contract(NFTABI, process.env.NEXT_PUBLIC_CONTRACT, provider);
         const call = contract.populate("mint", {
+            nftId: props.level,
             rewardEarned: data?.signStrkAmount, 
             hash: data?.hash, 
             signature: data?.sig
@@ -90,11 +92,15 @@ export default function NFTCard(props: NFTCardProps) {
         blockIdentifier: BlockTag.pending
     })
 
+    const isTxSettling = useMemo(() => {
+        return ((dataTx?.transaction_hash && isLoadingTx) || isPendingTx) ? true : false
+    }, [dataTx, isLoadingTx, isPendingTx])
+
     function buttonText() {
         if (Number(dataIsClaimed) > 0) {
             return "Claimed"
         }
-        return <>{!address && props.isClaimable ? "Connect" : "Mint NFT"} {((dataTx?.transaction_hash && isLoadingTx) || isPendingTx) && <Spinner size='sm' marginLeft='10px'/>}</>
+        return <>{!address && props.isClaimable ? "Connect" : "Mint NFT"} {isTxSettling && <Spinner size='sm' marginLeft='10px'/>}</>
     }
 
     return <Box 
@@ -106,15 +112,29 @@ export default function NFTCard(props: NFTCardProps) {
         backgroundRepeat={'no-repeat'}
         backgroundSize={'cover'}
     >   
-        <Image src={props.image} alt={`NFT ${props.level}`} width={'100%'}
-            filter={props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
+        <Image src={props.image} alt={`NFT ${props.level}`} 
+            width={200}
+            height={266.81}
+            style={{
+                width: '100%',
+                height: 'auto',
+                filter: props.isClaimable ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'
+            }}
+            onClick={() => props.isClaimable && onOpenImage()}
         />
         <Text color='white' textAlign='center' margin={'15px 0'}>Level {props.level}</Text>
         {isMobile && <Text color='primary' fontWeight={'bold'} fontSize='18px' textAlign='center' margin={'15px 0'}>{levels.filter(l => l.id == props.level)[0].amountSTRK.toLocaleString()} STRK</Text>}
         {!isMobile && <Button 
             width={'100%'} 
-            disabled={(props.isClaimable && (!address || Number(dataIsClaimed) == 0)) ? false : true}
-            variant={(props.isClaimable && (!address || Number(dataIsClaimed) == 0)) ? 'base' : 'disabled'}
+            disabled={
+                (
+                    props.isClaimable && 
+                    (!address || 
+                        (Number(dataIsClaimed) == 0 && !isTxSettling)
+                    )
+                ) 
+                ? false : true}
+            variant={(props.isClaimable && (!address || (Number(dataIsClaimed) == 0 && !isTxSettling))) ? 'base' : 'disabled'}
             onClick={() => {
                 if (props.isClaimable && !address) {
                     onOpen();
@@ -123,7 +143,7 @@ export default function NFTCard(props: NFTCardProps) {
                 }
             }}
         >   
-            {buttonText()}                
+            {buttonText()}          
         </Button>}
 
         {/* wallet popup */}
@@ -166,6 +186,29 @@ export default function NFTCard(props: NFTCardProps) {
                     {capitalize(conn.name)}
                     </Button>
                     ))}
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+
+
+        {/* inage popup */}
+        <Modal isOpen={isOpenImage} onClose={() => {}}>
+            <ModalOverlay bg='blackAlpha.300'
+                backdropFilter='auto'
+                backdropBlur='5px'/>
+            <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} 
+                borderRadius={'10px'}  maxWidth={'700px'} width={'100%'}>
+                <ModalCloseButton color='bg_light' onClick={onCloseImage} />
+                <ModalBody padding={'40px 40px'}>
+                    <Image src={props.image} alt={`NFT ${props.level}`}
+                        width={1000}
+                        height={1334.04}
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            filter: 'none'
+                        }}
+                    />
                 </ModalBody>
             </ModalContent>
         </Modal>
@@ -243,7 +286,7 @@ export default function NFTCard(props: NFTCardProps) {
                 backdropFilter='auto'
                 backdropBlur='5px'
             />
-            <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'850px'}>
+            <ModalContent bg='bg' borderColor={'white'} borderWidth={'1px'} borderRadius={'10px'}  minWidth={'1000px'}>
                 <ModalBody padding={'40px 80px'}>
                     <Text 
                         color='primary'
@@ -258,12 +301,26 @@ export default function NFTCard(props: NFTCardProps) {
                         {
                             levels.map((level) => (
                                 <Image 
-                                    width={'25%'}
+                                    width={200}
+                                    height={266.81}
                                     src={level.nftSrc}
                                     key={level.id}
-                                    filter={isClaimable(
-                                        address, userSTRK, level, levels, data
-                                    ) ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'}
+                                    alt={'NFT ' + level.id}
+                                    onClick={() => {
+                                        if(isClaimable(
+                                            address, userSTRK, level, levels, data
+                                        )) {
+                                            onCloseMintComplete()
+                                            onOpenImage()
+                                        }
+                                    }}
+                                    style={{
+                                        width: '23.2%',
+                                        height: 'auto',
+                                        cursor: isClaimable(
+                                            address, userSTRK, level, levels, data
+                                        ) ? 'none' : 'grayscale(1) blur(7px) brightness(0.5)'
+                                    }}
                                 />
                             ))
                         }

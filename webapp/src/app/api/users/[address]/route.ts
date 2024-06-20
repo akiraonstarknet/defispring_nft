@@ -39,13 +39,16 @@ export async function GET(req: Request, context: any) {
             ],
             l2: [
                 standariseAddress('0x06738C94e72c19F2EEA8deb5E6e9ab8dFecFb462dC6906E6542A30BF179594ef'), // damian
+                standariseAddress('0x061ac458892A156336b6E297742b28Da072d033F2D4Ad7880ec9CBE2194be9bc'), // roberto
             ],
             l3: [
                 standariseAddress('0x07c35c66a72965f2e1d1714f25bba835794D7FEf57eceC333574e311014B5746'), // damian
+                standariseAddress('0x00C7AC19CE4fDF6Ec88e4EabFF44Abebf66E4Ff1Db4F1FCAd0a71D11C1e1815B'), // roberto
             ],
             l4: [
                 standariseAddress('0x03a22a9e61d2edcefd604c3a7dc2a57d7629f4321537243e7682fe7fa07546c5'), // akira
                 standariseAddress('0x07bD5c57173EeADd4511D5563b209cd011425cbfB0301DB4646F76CBB21c908F'), // damian
+                standariseAddress('0x04384cFc98Eb8f45D64A122D2A247D4fb494D88BD588D1bfE06E6183107C734F'), // roberto
             ]
         }
 
@@ -55,12 +58,14 @@ export async function GET(req: Request, context: any) {
             ],
             l1: [
                 standariseAddress('0x0239e533E9E8675f9520bD485100558a9e5163a6830Ea43C96de5109AFc78C6a'), // damian
+                standariseAddress('0x00c7b2cE0E4D25544c21f4c7F9A4331EFb205A0e6f6eC8474ca65C436484E85d'), // roberto
             ],
             l2: [
                 standariseAddress('0x048eDAac7E8e21944b328ca61719c5A9DCAC85436632491A990Dd2D40D518135'), // damian
             ],
             l3: [
                 standariseAddress('0x04309a532DAd66E93B1ec02b70dF60146055265DD32dC4C7945deec4DA03b9e6'), // damian
+                standariseAddress('0x061Ef1c31d48d0C9FbBF739f91401FEAdce6E3d5C2d894a73f2713D2815062bb'), // roberto
             ],
             l4: [
                 "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira

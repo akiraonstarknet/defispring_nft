@@ -1,7 +1,7 @@
 import { v1alpha2 } from "https://esm.run/@apibara/starknet@latest";
 import { EventProcessor, IConstracts } from "./types.ts";
 import { standariseAddress, toBigInt, toHex } from "./utils.ts";
-
+import ProcessedContracts from './processed_contracts.json' with { type: "json" };
 
 //
 // class hash based event processors
@@ -46,88 +46,32 @@ const _contracts: IConstracts = {
         "classhash": "0x006a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
         "event_key": SNF_EVENT_KEY,
         "processor": snfEventProcessor,
-        "contracts": [
-            {
-                "address": "0x027dee8c8c7f28d67bc771afe0c786bfb59d78f0e1ce303a86006b91b98dc3cf",
-                "protocol": "Jediswap V1",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x00dc347ea9e7dc2a307e853b97e7189dfb08679a98e8d5ba549a1872febf2e5d",
-                "protocol": "10KSwap",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x05eb02e164f78fd91b9be6a0b9b3aa02c936db485bd760730f65711533c70a26",
-                "protocol": "Haiko",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x005763f02381e89C6894FFEA078D1CF9e58dA0EAd33d5B52aA608ACc04063053",
-                "protocol": "MySwap",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x0575a33680cca4beb4c3efb7297b7ee0f7bb4e672a9149c4691f1409e6c94322",
-                "protocol": "Sithswap",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x07e71f1efb9cb53253627449b5599842daa61c68bb04743609a96111a94f0f3b",
-                "protocol": "StarkDefi",
-                "remarks": "COMMON"
-            },
-            {
-                "address": "0x0354ae0842a8d49069f03f61701eaacc19733ec35352724f420acda500b8bedb",
-                "protocol": "Nostra",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x7df3257d11cdbea698450bfa0b54f219e40447c4920511a74784d2f4ddac017",
-                "protocol": "Nostra",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x6f80b8e79c5a4f60aaa1d5d251e2dfc55496ed748f96cf38c034de6d578f3f",
-                "protocol": "Nostra",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x6eb587e14ebd9556db09f8d5854ae54bc24736e0e163443b3f7547e6cc908ea",
-                "protocol": "Nostra",
-                "remarks": "ROUND_SPECIFIC"
-            },
-
-        ]
+        "contracts": []
     },
     "ekubo_classhash": {
         "classhash": "0x01cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
         "event_key": EKUBO_EVENT_KEY,
         "processor": ekuboEventProcessor,
-        "contracts": [
-            {
-                "address": "0x03a3cc51e76135caee3473680a11f64db87537a0252f805d60e69f31e1a7e9b4",
-                "protocol": "Ekubo",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x054ead9cbb7c140dd4f653aaad1f935ba8f8c002a2b8afea77793fdf8d1d80d3",
-                "protocol": "Ekubo",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x079fea253b4424e0d4bf251c97b0b0f70e682b3d86952b8f534f150b05ae9afe",
-                "protocol": "Ekubo",
-                "remarks": "ROUND_SPECIFIC"
-            },
-            {
-                "address": "0x078597e910132071274f2664664AB069cc0A4682f73E701D723B6fC2E8930b1b",
-                "protocol": "Ekubo",
-                "remarks": "ROUND_SPECIFIC"
-            }
-        ]
+        "contracts": []
+    },
+    "ekubo2_classhash": {
+        "classhash": "0x21c6c54d027a8d37077b9b45e0aea4c5f22e40c59aba378f64e8cecc6b4a944",
+        "event_key": EKUBO_EVENT_KEY,
+        "processor": ekuboEventProcessor,
+        "contracts": []
     }
 }
+
+ProcessedContracts.forEach(contract => {
+    const cls = contract.classHash;
+    const index = Object.keys(_contracts).findIndex(ch => _contracts[ch].classhash === cls);
+    if (index >= 0) {
+        _contracts[Object.keys(_contracts)[index]].contracts.push({
+            address: contract.contractAddress,
+            protocol: contract.protocol
+        });
+    }
+})
 
 Object.keys(_contracts).forEach(ch => {
     _contracts[ch].contracts.forEach(contract => {

@@ -7,7 +7,6 @@ import { v1alpha2 } from "https://esm.run/@apibara/starknet@latest"
 interface IContractInfo {
     address: string,
     protocol: string,
-    remarks: "COMMON" | "ROUND_SPECIFIC",
 }
 
 export type EventProcessor = (event: v1alpha2.IEvent) => {

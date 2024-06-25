@@ -7,6 +7,7 @@
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
     "get_synced_block": "tsx src/get_synced_block.ts",
+    "process_contracts": "ts-node src/processContracts",
     "start": "apibara run --allow-env=.env src/indexer.ts --sink-id=1 --status-server-address=0.0.0.0:1234",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,7 +19,8 @@
     "@prisma/client": "5.12.1",
     "dotenv": "16.4.5",
     "prisma": "^5.12.1",
-    "starknet": "^6.7.0"
+    "starknet": "^6.7.0",
+    "tslib": "^2.6.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.0.0",

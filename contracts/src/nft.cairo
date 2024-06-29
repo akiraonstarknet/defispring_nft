@@ -23,6 +23,7 @@ pub trait IDeFiSpringNFT<TState> {
     fn get_settings(self: @TState) -> Settings;
     fn set_pubkey(ref self: TState, pubkey: felt252);
     fn get_pubkey(self: @TState) -> felt252;
+    // fn set_token_uri(ref self: TState, uri: ByteArray);
 }
 
 #[starknet::contract]
@@ -119,6 +120,11 @@ mod DeFiSpringNFT {
 
     #[abi(embed_v0)]
     impl NFT of IDeFiSpringNFT<ContractState> {
+        // fn set_token_uri(ref self: ContractState, uri: ByteArray) {
+        //     self.ownable.assert_only_owner();
+        //     self.erc1155.set_base_uri(uri);
+        // }
+
         fn name(self: @ContractState) -> ByteArray {
             self.name.read()
         }

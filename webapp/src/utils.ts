@@ -7,19 +7,19 @@ import {Connection} from 'postgresql-client';
 
 export const LEVELS = [{
     id: 1,
-    amountSTRK: 10,
+    amountSTRK: 100,
     nftSrc: NFT1.src,
 }, {
     id: 2,
-    amountSTRK: 100,
+    amountSTRK: 1000,
     nftSrc: NFT2.src,
 }, {
     id: 3,
-    amountSTRK: 1000,
+    amountSTRK: 7500,
     nftSrc: NFT3.src,
 }, {
     id: 4,
-    amountSTRK: 10000,
+    amountSTRK: 20000,
     nftSrc: NFT4.src,
 }]
 

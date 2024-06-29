@@ -65,7 +65,7 @@ export async function GET(req: Request, context: any) {
             ],
             l3: [
                 standariseAddress('0x04309a532DAd66E93B1ec02b70dF60146055265DD32dC4C7945deec4DA03b9e6'), // damian
-                standariseAddress('0x061Ef1c31d48d0C9FbBF739f91401FEAdce6E3d5C2d894a73f2713D2815062bb'), // roberto
+                standariseAddress('0x03495DD1e4838aa06666aac236036D86E81A6553e222FC02e70C2Cbc0062e8d0'), // roberto
             ],
             l4: [
                 "0x5af1e8df8d237cb76493f8305063674496f945c0ed98d5be45dede299c31f99", // akira

@@ -61,7 +61,7 @@ export default function transform({ header, events }: v1alpha2.Block) {
             eventIndex: toNumber(event.index),
             contract: standariseAddress(event.fromAddress),
             claimee: claimInfo.claimee,
-            amount: claimInfo.amount.toString(),
+            amount:claimInfo.amount.toString(),
             eventKey: claimInfo.eventKey,
             timestamp: toNumber(timestamp?.seconds),
         };

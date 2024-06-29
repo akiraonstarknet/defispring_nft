@@ -20,4 +20,5 @@ model claims {
   cursor       BigInt? @map("_cursor")
 
   @@unique([block_number, txIndex, eventIndex], name: "event_id")
+  @@index([claimee], type: Hash)
 }

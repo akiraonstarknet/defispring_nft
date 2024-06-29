@@ -64,7 +64,9 @@ const _contracts: IConstracts = {
 
 ProcessedContracts.forEach(contract => {
     const cls = contract.classHash;
-    const index = Object.keys(_contracts).findIndex(ch => _contracts[ch].classhash === cls);
+    const index = Object.keys(_contracts).findIndex(ch => {
+        return standariseAddress(_contracts[ch].classhash) === standariseAddress(cls)
+    });
     if (index >= 0) {
         _contracts[Object.keys(_contracts)[index]].contracts.push({
             address: contract.contractAddress,

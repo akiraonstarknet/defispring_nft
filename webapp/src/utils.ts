@@ -1,8 +1,8 @@
 import { Level, UserData } from './state.atoms'
-import NFT1 from '@public/nfts/nft1.png'
-import NFT2 from '@public/nfts/nft2.png'
-import NFT3 from '@public/nfts/nft3.png'
-import NFT4 from '@public/nfts/nft4.png'
+import NFT1 from '@public/nfts/images/nft1.png'
+import NFT2 from '@public/nfts/images/nft2.png'
+import NFT3 from '@public/nfts/images/nft3.png'
+import NFT4 from '@public/nfts/images/nft4.png'
 import {Connection} from 'postgresql-client';
 
 export const LEVELS = [{

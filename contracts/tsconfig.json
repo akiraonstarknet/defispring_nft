@@ -1,7 +1,8 @@
 {
     "extends": "@tsconfig/recommended/tsconfig.json",
     "compilerOptions": {
-      "preserveConstEnums": true
+      "preserveConstEnums": true,
+      "resolveJsonModule": true
     },
     "include": ["src/**/*"],
     "exclude": ["**/*.spec.ts"]

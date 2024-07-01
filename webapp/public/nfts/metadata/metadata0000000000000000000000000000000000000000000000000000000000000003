@@ -1,0 +1,11 @@
+{
+    "name": "Starknet Defi Spring #3",
+    "description": "Level 3 Starknet DeFi user",
+    "image": "https://olive-adorable-crow-976.mypinata.cloud/ipfs/QmWrk9iuAgKz5X42g3BxyKrxkUSyZ6ah1mkfdecxGtK7yV/nft3.png",
+    "attributes": [
+        {
+        "trait_type": "Level", 
+        "value": "3"
+      }
+    ]
+}

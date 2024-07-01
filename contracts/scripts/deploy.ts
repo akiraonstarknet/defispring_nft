@@ -1,16 +1,16 @@
 import { Account, Contract, TransactionExecutionStatus, byteArray } from "starknet";
 import { deployContract, getAccount, getRpcProvider, myDeclare } from "../tests/utils";
-
+import NFTAbi from './nft.abi.json';
 const contractName = "DeFiSpringNFT";
-const baseURI = 'https://tomato-recent-macaw-184.mypinata.cloud/ipfs/QmZdRSojzaM2aRaX39MneeFQs86uWxihx9n8N2uXhjkPtF/metadata{id}'
+const baseURI = 'https://olive-adorable-crow-976.mypinata.cloud/ipfs/QmXdiwoMiVNMGsVozHXbU9JUQBxZv26QtpAycVCX814p3z/metadata{id}'
 const provider = getRpcProvider();
 const acc = getAccount();
 const signerAcc = new Account(provider, process.env.ACCOUNT_ADDRESS || '', process.env.ACCOUNT_PK || '');
 async function deploy(class_hash: string) {
     console.log('nft signer: ', signerAcc.address);
     await deployContract(contractName, class_hash, {
-        name: byteArray.byteArrayFromString("DeFiSpringNFT"),
-        symbol: byteArray.byteArrayFromString("DSNFT"),
+        name: byteArray.byteArrayFromString("DEFISPRING"),
+        symbol: byteArray.byteArrayFromString("DFSP"),
         base_uri: byteArray.byteArrayFromString(baseURI),
         owner: acc.address,
         settings: {
@@ -69,7 +69,29 @@ async function set_pub_key() {
     console.log('done');
 }
 
+async function set_token_uri() {
+    const contractAddr = '0x313ba90423b939ff6949ad185e31ebdf4ef1db8d23ba9ba3b2ebcab2ad43d8d';
+    const contract = new Contract(NFTAbi, contractAddr, provider);
+    console.log(NFTAbi.filter(a => a.name === 'set_token_uri'))
+    console.log(byteArray.byteArrayFromString(baseURI))
+    const call = contract.populate('set_token_uri', {
+        uri: baseURI
+    })
+    const tx = await acc.execute([call]);
+    console.log(`tx hash: ${tx.transaction_hash}`);
+    await provider.waitForTransaction(tx.transaction_hash, {
+        successStates: [TransactionExecutionStatus.SUCCEEDED]
+    })
+    console.log('done');
+
+}
+
 //
-// declareDeploy();
+declareDeploy();
 // updateSettings();
-set_pub_key();
+// set_pub_key();
+// set_token_uri();
+
+/**
+ * Main contract: 0xaa84534f0e0510618ad6a16f24e9a64fe0277b1f1ca799f0bddfec300d870
+ */

@@ -25,4 +25,4 @@ RUN echo "Installed apibara, checking"
 RUN /root/.local/share/apibara/bin/apibara --version
 RUN /root/.local/share/apibara/bin/apibara plugins install sink-postgres
 
-ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=1", "--status-server-address=0.0.0.0:1234"]
+ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=3", "--status-server-address=0.0.0.0:1234"]

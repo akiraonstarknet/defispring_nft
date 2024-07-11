@@ -26,22 +26,22 @@ async function run() {
     // Can i improve my query?
     const myInfo = await prisma.claims.findMany({
         where: {
-            claimee: standariseAddress('0x078A1c18E4FEfb6f2da9dc2159bB8Db2a316305fF42B435f33EefcE3bd268416')
+            claimee: standariseAddress('0x004b878177f4f2072308011c2c31a8f7e58ae1a1d989ca69cc39b002623639c8')
         }
     })
     console.log('myInfo: ', myInfo.length)
     let sum = BigInt(0);
     console.log(myInfo.map(m => {
         const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
-        const amt = BigInt(m.amount) / BigInt(10**18);
+        const amt = BigInt(m.amount);
         sum += amt;
         return {
             ...m,
             protocol: c?.protocol,
-            amt: amt.toString()
+            amt: (amt / BigInt(10**18)).toString()
         }
     }))
-    console.log('sum: ', sum)
+    console.log('sum: ', (sum / BigInt(10**18)).toString())
 
     const totalSTRKClaimed = await prisma.claims.findMany({
         select: {
@@ -136,5 +136,13 @@ async function nimboraAcc() {
 
 }
 
-run()
+async function runBulk() {
+    const addresses: string[] = [];
+    const prisma = new PrismaClient();
+
+    const data = await prisma.claims.findMany({
+        wh
+    })
+}
+// run()
 // nimboraAcc()

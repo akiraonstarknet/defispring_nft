@@ -1,5 +1,6 @@
 import { RpcProvider } from 'starknet'
 import fs from 'fs';
+import ProcessedContracts from './processed_contracts.json';
 
 /**
  * Reads distribution contracts from a url
@@ -25,6 +26,7 @@ async function run() {
 
     const uniqueClasses: string[] = [];
     const processedContracts: ContractInfo[] = [];
+    const newContracts: ContractInfo[] = [];
     const contractClassMap = new Map<string, string>();
 
     const classesToExclude = ['0x737ee2f87ce571a58c6c8da558ec18a07ceb64a6172d5ec46171fbc80077a48']
@@ -43,6 +45,16 @@ async function run() {
                 contractAddress: contract.Address,
                 protocol: contract['Protocol Name']
             });
+            
+            // separately store new contracts each round
+            const exists = ProcessedContracts.find(p => p.contractAddress === contract.Address);
+            if (!exists) {
+                newContracts.push({
+                    classHash: cls,
+                    contractAddress: contract.Address,
+                    protocol: contract['Protocol Name']
+                });
+            }
             contractClassMap.set(contract.Address, cls);
         } else {
             console.log(`Skipping duplicate contract: ${contract['Protocol Name']} at ${contract.Address}`);
@@ -53,6 +65,8 @@ async function run() {
     }
 
     fs.writeFileSync('./src/processed_contracts.json', JSON.stringify(processedContracts), {
+        encoding: 'utf-8'
+    });fs.writeFileSync('./src/new_contracts.json', JSON.stringify(newContracts), {
         encoding: 'utf-8'
     });
     console.log(`Unique classes: ${JSON.stringify(uniqueClasses)}`)

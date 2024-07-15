@@ -1,5 +1,5 @@
 import Long from "https://esm.run/long@latest";
-import { num } from 'https://esm.run/starknet@latest';
+import { num } from 'https://esm.run/starknet@5.29.0';
 
 export function toHex(el: string | null | undefined) {
     if (!el) return '0x0'

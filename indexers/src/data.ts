@@ -24,24 +24,24 @@ async function run() {
     console.log('unique contracts: ', data.length)
     
     // Can i improve my query?
-    const myInfo = await prisma.claims.findMany({
-        where: {
-            claimee: standariseAddress('0x004b878177f4f2072308011c2c31a8f7e58ae1a1d989ca69cc39b002623639c8')
-        }
-    })
-    console.log('myInfo: ', myInfo.length)
-    let sum = BigInt(0);
-    console.log(myInfo.map(m => {
-        const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
-        const amt = BigInt(m.amount);
-        sum += amt;
-        return {
-            ...m,
-            protocol: c?.protocol,
-            amt: (amt / BigInt(10**18)).toString()
-        }
-    }))
-    console.log('sum: ', (sum / BigInt(10**18)).toString())
+    // const myInfo = await prisma.claims.findMany({
+    //     where: {
+    //         claimee: standariseAddress('0x004b878177f4f2072308011c2c31a8f7e58ae1a1d989ca69cc39b002623639c8')
+    //     }
+    // })
+    // console.log('myInfo: ', myInfo.length)
+    // let sum = BigInt(0);
+    // console.log(myInfo.map(m => {
+    //     const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
+    //     const amt = BigInt(m.amount);
+    //     sum += amt;
+    //     return {
+    //         ...m,
+    //         protocol: c?.protocol,
+    //         amt: (amt / BigInt(10**18)).toString()
+    //     }
+    // }))
+    // console.log('sum: ', (sum / BigInt(10**18)).toString())
 
     const totalSTRKClaimed = await prisma.claims.findMany({
         select: {
@@ -71,6 +71,21 @@ async function run() {
         }
     })
     console.log('lastBlock: ', lastBlock)
+
+    const nTxLatestBlock = await prisma.claims.findMany({
+        where: {
+            block_number: lastBlock?.block_number
+        }
+    })
+    console.log('nTxLatestBlock: ', nTxLatestBlock.length)
+
+    // nTx prev block
+    const nTxPrevBlock = await prisma.claims.findMany({
+        where: {
+            block_number: lastBlock ? lastBlock.block_number - 1 : 0
+        }
+    })
+    console.log('nTxPrevBlock: ', nTxPrevBlock.length)
 }
 
 async function nimboraAcc() {
@@ -136,13 +151,13 @@ async function nimboraAcc() {
 
 }
 
-async function runBulk() {
-    const addresses: string[] = [];
-    const prisma = new PrismaClient();
+// async function runBulk() {
+//     const addresses: string[] = [];
+//     const prisma = new PrismaClient();
 
-    const data = await prisma.claims.findMany({
-        wh
-    })
-}
-// run()
+//     const data = await prisma.claims.findMany({
+//         wh
+//     })
+// }
+run()
 // nimboraAcc()

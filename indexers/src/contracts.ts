@@ -1,4 +1,4 @@
-import { v1alpha2 } from "https://esm.run/@apibara/starknet@latest";
+import { v1alpha2 } from "https://esm.run/@apibara/starknet";
 import { EventProcessor, IConstracts } from "./types.ts";
 import { standariseAddress, toBigInt, toHex } from "./utils.ts";
 import ProcessedContracts from './processed_contracts.json' with { type: "json" };

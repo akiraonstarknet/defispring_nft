@@ -4,6 +4,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 WORKDIR /app
 ADD src /app/src
 COPY .env package.json schema.prisma /app
+COPY apibara_install.sh /app
 
 # install deps
 RUN apt-get -y update; apt-get -y install curl
@@ -19,7 +20,8 @@ RUN apt-get -y install jq
 # RUN npx prisma db push
 
 # install apibara
-RUN curl -sL https://install.apibara.com | bash
+RUN chmod +x ./apibara_install.sh
+RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
 RUN /root/.local/share/apibara/bin/apibara --version

@@ -25,13 +25,10 @@ RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
 RUN /root/.local/share/apibara/bin/apibara --version
-# Add a retry mechanism for the command
-RUN set -eux; \
-    for i in $(seq 1 15); do \
-        /root/.local/share/apibara/bin/apibara plugins install sink-postgres && break || { \
-            echo "Attempt $i failed! Retrying in 10 seconds..."; \
-            sleep 10; \
-        }; \
-    done
+
+RUN wget https://github.com/apibara/dna/releases/download/sink-postgres%2Fv0.8.0/sink-postgres-x86_64-linux.gz
+RUN gzip -d sink-postgres-x86_64-linux.gz
+RUN chmod +x sink-postgres-x86_64-linux
+RUN /root/.local/share/apibara/bin/apibara plugins install --file sink-postgres-x86_64-linux
 
 ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=3", "--status-server-address=0.0.0.0:1234"]

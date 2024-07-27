@@ -24,7 +24,7 @@ COPY apibara_install.sh /app
 # RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
-RUN apt-get update
+RUN apk update
 RUN apt-get install -y coreutils 
 RUN ls /
 RUN cd .local/share/

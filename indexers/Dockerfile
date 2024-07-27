@@ -9,6 +9,8 @@ COPY apibara_install.sh /app
 # install deps
 RUN apt-get -y update; apt-get -y install curl
 RUN apt-get -y install jq
+RUN apt-get install wget -y
+RUN apt-get install gzip -y
 
 # install node
 # RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash

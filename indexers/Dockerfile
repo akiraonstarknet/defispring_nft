@@ -24,11 +24,11 @@ COPY apibara_install.sh /app
 # RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
-RUN ls /root/
-RUN ls /root/.local/
-RUN ls /root/.local/share/
-RUN ls /root/.local/share/apibara/
-RUN ls /root/.local/share/apibara/bin/
+RUN cd /root/
+RUN cd /root/.local/
+RUN cd /root/.local/share/
+RUN cd /root/.local/share/apibara/
+RUN cd /root/.local/share/apibara/bin/
 RUN apibara --version
 RUN /root/.local/share/apibara/bin/apibara --version
 # RUN /root/.local/share/apibara/bin/apibara plugins install sink-postgres

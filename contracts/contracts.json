@@ -1,1 +1,8 @@
-{"class_hashes":{"DeFiSpringNFT":"0x1ea34f2266d088a94cedd85ac8bf700a0d68ffdade87b75f370c240ccb99627"},"contracts":{"DeFiSpringNFT":"0xaa84534f0e0510618ad6a16f24e9a64fe0277b1f1ca799f0bddfec300d870"}}
+{
+    "class_hashes": {
+        "DeFiSpringNFT": "0x1ea34f2266d088a94cedd85ac8bf700a0d68ffdade87b75f370c240ccb99627"
+    },
+    "contracts": {
+        "DeFiSpringNFT": "0xaa84534f0e0510618ad6a16f24e9a64fe0277b1f1ca799f0bddfec300d870"
+    }
+}

@@ -24,7 +24,16 @@ COPY apibara_install.sh /app
 # RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
-RUN apk update
+RUN if command -v apt-get >/dev/null 2>&1; then \
+        apt-get update && apt-get install -y coreutils; \
+    elif command -v yum >/dev/null 2>&1; then \
+        yum update -y && yum install -y coreutils; \
+    elif command -v apk >/dev/null 2>&1; then \
+        apk update && apk add --no-cache coreutils; \
+    else \
+        echo "No supported package manager found"; \
+        exit 1; \
+    fi
 RUN apt-get install -y coreutils 
 RUN ls /
 RUN cd .local/share/

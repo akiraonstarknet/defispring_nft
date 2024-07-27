@@ -1,5 +1,5 @@
-FROM quay.io/apibara/sink-postgres:latest
-# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+FROM ubuntu:22.04 as base
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 WORKDIR /app
 ADD src /app/src
@@ -7,8 +7,8 @@ COPY .env package.json schema.prisma /app
 COPY apibara_install.sh /app
 
 # install deps
-# RUN apt-get -y update; apt-get -y install curl
-# RUN apt-get -y install jq
+RUN apt-get -y update; apt-get -y install curl
+RUN apt-get -y install jq
 
 # install node
 # RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -20,27 +20,18 @@ COPY apibara_install.sh /app
 # RUN npx prisma db push
 
 # install apibara
-# RUN chmod +x ./apibara_install.sh
-# RUN ./apibara_install.sh
+RUN chmod +x apibara_install.sh
+RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
-RUN if command -v apt-get >/dev/null 2>&1; then \
-        apt-get update && apt-get install -y coreutils; \
-    elif command -v yum >/dev/null 2>&1; then \
-        yum update -y && yum install -y coreutils; \
-    elif command -v apk >/dev/null 2>&1; then \
-        apk update && apk add --no-cache coreutils; \
-    else \
-        echo "No supported package manager found"; \
-        exit 1; \
-    fi
-RUN apt-get install -y coreutils 
-RUN ls /
-RUN cd .local/share/
-RUN cd .local/share/apibara/
-RUN cd .local/share/apibara/bin/
-RUN apibara --version
 RUN /root/.local/share/apibara/bin/apibara --version
-# RUN /root/.local/share/apibara/bin/apibara plugins install sink-postgres
+# Add a retry mechanism for the command
+RUN set -eux; \
+    for i in $(seq 1 15); do \
+        /root/.local/share/apibara/bin/apibara plugins install sink-postgres && break || { \
+            echo "Attempt $i failed! Retrying in 10 seconds..."; \
+            sleep 10; \
+        }; \
+    done
 
 ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=3", "--status-server-address=0.0.0.0:1234"]

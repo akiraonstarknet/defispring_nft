@@ -1,5 +1,5 @@
 FROM quay.io/apibara/sink-postgres:latest
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 WORKDIR /app
 ADD src /app/src

@@ -22,15 +22,27 @@ async function run() {
         }
     })
     console.log('lastBlock: ', lastBlock)
+
+    const totalTx = await prisma.claims.count({
+        where: {
+            block_number: {
+                gte: 662510,
+                lt: 662520
+            }
+        }
+    })
+    console.log('totalTx: ', totalTx)
     
     const data = await prisma.claims.findMany({
-        where: {},
+        where: {
+        },
         distinct: ['contract'],
         select: {
             contract: true
         }
     })
     console.log('unique contracts: ', data.length)
+
     
     // Can i improve my query?
     // const myInfo = await prisma.claims.findMany({

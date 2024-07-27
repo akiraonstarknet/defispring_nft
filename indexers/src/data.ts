@@ -13,7 +13,16 @@ export function standariseAddress(address: string | bigint) {
 
 async function run() {
     const prisma = new PrismaClient();
-
+    const lastBlock = await prisma.claims.findFirst({
+        orderBy: {
+            block_number: 'desc'
+        },
+        select: {
+            block_number: true
+        }
+    })
+    console.log('lastBlock: ', lastBlock)
+    
     const data = await prisma.claims.findMany({
         where: {},
         distinct: ['contract'],
@@ -26,7 +35,7 @@ async function run() {
     // Can i improve my query?
     // const myInfo = await prisma.claims.findMany({
     //     where: {
-    //         claimee: standariseAddress('0x004b878177f4f2072308011c2c31a8f7e58ae1a1d989ca69cc39b002623639c8')
+    //         claimee: standariseAddress('0x05b55db55f5884856860e63f3595b2ec6b2c9555f3f507b4ca728d8e427b7864')
     //     }
     // })
     // console.log('myInfo: ', myInfo.length)
@@ -61,16 +70,6 @@ async function run() {
         }
     })
     console.log('uniqueUsers: ', uniqueUsers.length)
-
-    const lastBlock = await prisma.claims.findFirst({
-        orderBy: {
-            block_number: 'desc'
-        },
-        select: {
-            block_number: true
-        }
-    })
-    console.log('lastBlock: ', lastBlock)
 
     const nTxLatestBlock = await prisma.claims.findMany({
         where: {

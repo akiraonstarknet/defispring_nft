@@ -24,8 +24,6 @@ COPY apibara_install.sh /app
 # RUN ./apibara_install.sh
 
 RUN echo "Installed apibara, checking"
-RUN lsb_release -a
-RUN cat ~/.bashrc
 RUN cd .local/
 RUN cd .local/share/
 RUN cd .local/share/apibara/

@@ -18,7 +18,8 @@ async function run() {
             block_number: 'desc'
         },
         select: {
-            block_number: true
+            block_number: true,
+            cursor: true
         }
     })
     console.log('lastBlock: ', lastBlock)
@@ -26,8 +27,8 @@ async function run() {
     const totalTx = await prisma.claims.count({
         where: {
             block_number: {
-                gte: 662510,
-                lt: 662520
+                gte: 662868,
+                lt: 662878
             }
         }
     })

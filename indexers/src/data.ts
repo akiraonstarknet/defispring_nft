@@ -68,7 +68,7 @@ async function run() {
     const totalSTRKClaimed = await prisma.claims.findMany({
         select: {
             amount: true
-        }
+        },
     })
     let amountSum = BigInt(0);
     totalSTRKClaimed.forEach(claim => {
@@ -163,6 +163,18 @@ async function nimboraAcc() {
 
 }
 
+async function deleteAbove() {
+    const prisma = new PrismaClient();
+    const data = await prisma.claims.deleteMany({
+        where: {
+            block_number: {
+                gt: 667506,
+            }
+        }
+    })
+    console.log('deleted: ', data)
+}
+
 // async function runBulk() {
 //     const addresses: string[] = [];
 //     const prisma = new PrismaClient();
@@ -173,3 +185,4 @@ async function nimboraAcc() {
 // }
 run()
 // nimboraAcc()
+// deleteAbove();

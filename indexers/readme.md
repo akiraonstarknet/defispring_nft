@@ -19,4 +19,6 @@ sink-id can be anything, but use same always
 2. Shut indexer, Check last processed block and update sync.ts blocks
 3. Update index id from package.json
 4. Run sync indexer
+5. Check latest block, ensures its where indexer left, delete extra
+6. git push
 5. restart main indexe

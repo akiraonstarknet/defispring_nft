@@ -1,6 +1,7 @@
-import { RpcProvider } from 'starknet'
+import { Contract, RpcProvider } from 'starknet'
 import fs from 'fs';
 import ProcessedContracts from './processed_contracts.json';
+import NewContracts from './new_contracts.json';
 
 /**
  * Reads distribution contracts from a url
@@ -73,4 +74,50 @@ async function run() {
     console.log('Contracts written to src/processed_contracts.json');
 }
 
-run();
+function getPreviousWednesday(weeksBefore: number): Date {
+    const today = new Date();
+    
+    // Calculate how many days back to last Wednesday
+    let dayOfWeek = today.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    let daysSinceWednesday = (dayOfWeek >= 3) ? dayOfWeek - 3 : dayOfWeek + 4;
+
+    // If today is Monday (1) or after, we go back to the previous Wednesday.
+    if (dayOfWeek <= 3 && dayOfWeek !== 0) {
+        daysSinceWednesday += 7;
+    }
+
+    // Subtract the number of weeksBefore in days
+    const totalDaysBack = daysSinceWednesday + (weeksBefore * 7);
+
+    const previousWednesday = new Date(today);
+    previousWednesday.setDate(today.getDate() - totalDaysBack);
+
+    return previousWednesday;
+}
+
+async function getStartBlock() {
+    const provider = new RpcProvider({
+        nodeUrl: 'https://starknet-mainnet.public.blastapi.io'
+    });
+
+    let block = await provider.getBlockNumber();
+    console.log('Current block: ', block);
+
+    const requiredDate = getPreviousWednesday(2);
+    let currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
+    console.log('Current block date: ', currentBlockDate);
+
+    while (currentBlockDate > requiredDate) {
+        block -= 1000;
+        console.log(`Checking block ${block}`);
+        currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
+        console.log(`Debug: ${currentBlockDate} > ${requiredDate}`);
+    }
+    
+    console.log('Start block: ', block);
+    console.log('Start block date: ', currentBlockDate);
+    return block;
+}
+
+// run();
+getStartBlock();

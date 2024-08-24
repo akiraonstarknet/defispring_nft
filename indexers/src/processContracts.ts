@@ -72,6 +72,8 @@ async function run() {
     });
     console.log(`Unique classes: ${JSON.stringify(uniqueClasses)}`)
     console.log('Contracts written to src/processed_contracts.json');
+
+    getStartBlock();
 }
 
 function getPreviousWednesday(weeksBefore: number): Date {
@@ -103,15 +105,13 @@ async function getStartBlock() {
     let block = await provider.getBlockNumber();
     console.log('Current block: ', block);
 
-    const requiredDate = getPreviousWednesday(2);
+    const requiredDate = getPreviousWednesday(1);
     let currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
     console.log('Current block date: ', currentBlockDate);
 
     while (currentBlockDate > requiredDate) {
         block -= 1000;
-        console.log(`Checking block ${block}`);
         currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
-        console.log(`Debug: ${currentBlockDate} > ${requiredDate}`);
     }
     
     console.log('Start block: ', block);
@@ -119,5 +119,4 @@ async function getStartBlock() {
     return block;
 }
 
-// run();
-getStartBlock();
+run();

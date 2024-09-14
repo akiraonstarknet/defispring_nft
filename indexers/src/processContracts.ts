@@ -16,10 +16,11 @@ interface ContractInfo {
     protocol: string;
 }
 
+const provider = new RpcProvider({
+    nodeUrl: 'https://starknet-mainnet.infura.io/v3/b4707893f007463f97a61c8121a65c15'
+});
+
 async function run() {
-    const provider = new RpcProvider({
-        nodeUrl: 'https://starknet-mainnet.public.blastapi.io'
-    });
 
     const result = await fetch('https://kx58j6x5me.execute-api.us-east-1.amazonaws.com/starknet/fetchFile?file=address_settings/settings.json');
     const RawContracts = await result.json();
@@ -32,10 +33,20 @@ async function run() {
 
     const classesToExclude = ['0x737ee2f87ce571a58c6c8da558ec18a07ceb64a6172d5ec46171fbc80077a48']
 
+    const classesMap: any = {
+        "0x00703fd2ea6f6e694427cd87189e77fcb5beb2daa404583d2216686dad7cd1c2": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14"
+    }
     for(let i=0; i<RawContracts.length; ++i) {
         const contract = RawContracts[i]
         if (!contractClassMap.get(contract.Address)) {
-            const cls = await provider.getClassHashAt(contract.Address)
+            console.log(`Processing contract: ${contract['Protocol Name']} at ${contract.Address}`);
+            
+            let cls: string = '';
+            if (classesMap[contract.Address]) {
+                cls = classesMap[contract.Address];
+            } else {
+                cls = await provider.getClassHashAt(contract.Address);
+            }
             if (classesToExclude.includes(cls)) {
                 continue;
             }
@@ -98,9 +109,6 @@ function getPreviousWednesday(weeksBefore: number): Date {
 }
 
 async function getStartBlock() {
-    const provider = new RpcProvider({
-        nodeUrl: 'https://starknet-mainnet.public.blastapi.io'
-    });
 
     let block = await provider.getBlockNumber();
     console.log('Current block: ', block);
@@ -119,4 +127,5 @@ async function getStartBlock() {
     return block;
 }
 
-run();
+// run();
+getStartBlock()

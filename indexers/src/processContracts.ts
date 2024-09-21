@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 import { Contract, RpcProvider } from 'starknet'
 import fs from 'fs';
 import ProcessedContracts from './processed_contracts.json';
@@ -17,7 +19,7 @@ interface ContractInfo {
 }
 
 const provider = new RpcProvider({
-    nodeUrl: 'https://starknet-mainnet.infura.io/v3/b4707893f007463f97a61c8121a65c15'
+    nodeUrl: process.env.RPC_URL
 });
 
 async function run() {
@@ -127,5 +129,5 @@ async function getStartBlock() {
     return block;
 }
 
-// run();
-getStartBlock()
+run();
+// getStartBlock()

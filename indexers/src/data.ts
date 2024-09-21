@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import ProcessedContracts from './processed_contracts.json';
 import { num } from "starknet";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export function standariseAddress(address: string | bigint) {
     let _a = address;

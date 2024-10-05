@@ -170,7 +170,7 @@ async function deleteAbove() {
     const data = await prisma.claims.deleteMany({
         where: {
             block_number: {
-                gt: 667506,
+                gt: 776469,
             }
         }
     })

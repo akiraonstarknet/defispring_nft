@@ -25,7 +25,7 @@ console.log(`tracking ${filter.events.length} contracts`);
 
 export const config = {
     streamUrl: "https://mainnet.starknet.a5a.ch",
-    startingBlock: 748465, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
+    startingBlock: 767058, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
     network: "starknet",
     finality: "DATA_STATUS_ACCEPTED",
     filter: filter,
@@ -37,7 +37,7 @@ export const config = {
 };
 
 // ! REMEMBER TO UPDATE THIS ON EACH SYNC
-const MAX_BLOCK = 776469;
+const MAX_BLOCK = 797070;
 
 // Event processor function to store in db
 export default function transform({ header, events }: v1alpha2.Block) {

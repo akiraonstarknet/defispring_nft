@@ -1,1 +1,22 @@
-[{"classHash":"0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14","contractAddress":"0x0415d4e77c0507434cc38ad523a20f9fd5155a4267a86f99bc8b787284f644f3","protocol":"zkLend"},{"classHash":"0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64","contractAddress":"0x02fb7fccac476f59c90d707d0260901d5325ad327928bfab8a463e84610ee5de","protocol":"Nostra"},{"classHash":"0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64","contractAddress":"0x02ada1f8aff9b50c1816e1054260f8e5d41cbdcd5f4945be1e7924514ff4cc93","protocol":"Nostra"},{"classHash":"0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14","contractAddress":"0x53d2784a843ee1bb614c662db972b38a5180941b56fe01d81c0dfa9657064b2","protocol":"Ekubo"},{"classHash":"0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64","contractAddress":"0x04f2c94181ac0aa1b99b02822950491ddcdf152c72e53a28736f5092853cdc77","protocol":""}]
+[
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x0476e3589c53f1f0223cfe5129c80a03a9f7d32a69f7d9da2b6f70686bf685dc",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x04327da17a67e92dcd37619b927a7ee962c92a951dc42f78598c54bf77db467a",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x66cabe824da3ff583b967ce571d393e8b667b33415acc750397aa66b64a5a6c",
+        "protocol": "zkLend"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x018f48627af21e49a5f93ac425cd64fffb868b7b879eb28987891310885d492f",
+        "protocol": "Ekubo"
+    }
+]

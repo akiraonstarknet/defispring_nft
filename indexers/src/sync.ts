@@ -37,7 +37,7 @@ export const config = {
 };
 
 // ! REMEMBER TO UPDATE THIS ON EACH SYNC
-const MAX_BLOCK = 968778;
+const MAX_BLOCK = 985352;
 
 // Event processor function to store in db
 export default function transform({ header, events }: v1alpha2.Block) {

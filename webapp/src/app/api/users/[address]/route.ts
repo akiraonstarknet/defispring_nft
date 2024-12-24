@@ -17,8 +17,9 @@ const tenPow18 = new BigNumber(10).pow(18);
 export async function GET(req: Request, context: any) {
     let connection: Connection | null = null;
     try {
+        console.log('GETR /api/users/:address');
         connection = await getConnection();
-
+        console.log('got connection');
         const { params } = context;
         const addr = params.address;
 
@@ -82,22 +83,28 @@ export async function GET(req: Request, context: any) {
             throw new Error('Invalid signer');
         }
 
-        const result = await connection.query(
-            `select claimee, amount from claims where claimee='${queryAddr}'`);
-        
-        let strkAmount = new BigNumber(0);
-        if(result.rows) {
-            const rows: any[] = result.rows;
-            console.log('rows', queryAddr, rows);
-            rows.forEach(row => {
-                strkAmount = strkAmount.plus(row[1]);
-            }) 
-        } else {
-            console.log('noData', {
-                queryAddr
-            })
+        const rows: any[] = [];
+        const size = 100; // 100 rows per query
+        let offset = 0;
+        while (true) {
+            const result = await connection.query(
+                `select claimee, amount from claims where claimee='${queryAddr}' order by timestamp limit ${size} offset ${offset}`);
+            if (result.rows && result.rows.length != 0) {
+                rows.push(...result.rows);
+            }
+            if (result.rows?.length == 100) {
+                offset += size;
+            } else {
+                break;
+            }
         }
+        console.log(`rowss: ${rows.length}`);
+        let strkAmount = new BigNumber(0);
+        rows.forEach(row => {
+            strkAmount = strkAmount.plus(row[1]);
+        }) 
 
+        console.log('strkAmount', strkAmount.toFixed(0));
         let isInteractUser = (<any>IntractUsers)[pAddr] ? true : false;
 
         // mocks

@@ -48,58 +48,67 @@ async function run() {
 
     
     // Can i improve my query?
-    // const myInfo = await prisma.claims.findMany({
-    //     where: {
-    //         claimee: standariseAddress('0x05b55db55f5884856860e63f3595b2ec6b2c9555f3f507b4ca728d8e427b7864')
+    const myInfo = await prisma.claims.findMany({
+        where: {
+            claimee: standariseAddress('0x028958edc169f1bce827861c55d6756f8d9dd85c75795680b9a824b3e6f4d9fe')
+        }
+    })
+    let sum = BigInt(0);
+    const filtered: any[] = [];
+    console.log(myInfo.map(m => {
+        const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
+        const amt = BigInt(m.amount);
+        sum += amt;
+        if (amt > 0) {
+            filtered.push({
+                ...m,
+            })
+        }
+        return {
+            ...m,
+            protocol: c?.protocol,
+            amt: (amt / BigInt(10**18)).toString()
+        }
+    }))
+    console.log(filtered)
+    console.log(filtered.length);
+    console.log('myInfo: ', myInfo.length)
+    console.log('sum: ', (sum / BigInt(10**18)).toString())
+    
+
+    // const totalSTRKClaimed = await prisma.claims.findMany({
+    //     select: {
+    //         amount: true
+    //     },
+    // })
+    // let amountSum = BigInt(0);
+    // totalSTRKClaimed.forEach(claim => {
+    //     amountSum += BigInt(claim.amount)
+    // })
+    // console.log('totalSTRKClaimed: ', amountSum / BigInt(10**18))
+
+    // const uniqueUsers = await prisma.claims.findMany({
+    //     distinct: ['claimee'],
+    //     select: {
+    //         claimee: true
     //     }
     // })
-    // console.log('myInfo: ', myInfo.length)
-    // let sum = BigInt(0);
-    // console.log(myInfo.map(m => {
-    //     const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
-    //     const amt = BigInt(m.amount);
-    //     sum += amt;
-    //     return {
-    //         ...m,
-    //         protocol: c?.protocol,
-    //         amt: (amt / BigInt(10**18)).toString()
+    // console.log('uniqueUsers: ', uniqueUsers.length)
+
+    // const nTxLatestBlock = await prisma.claims.findMany({
+    //     where: {
+    //         block_number: lastBlock?.block_number
     //     }
-    // }))
-    // console.log('sum: ', (sum / BigInt(10**18)).toString())
+    // })
+    // console.log('nTxLatestBlock: ', nTxLatestBlock.length)
 
-    const totalSTRKClaimed = await prisma.claims.findMany({
-        select: {
-            amount: true
-        },
-    })
-    let amountSum = BigInt(0);
-    totalSTRKClaimed.forEach(claim => {
-        amountSum += BigInt(claim.amount)
-    })
-    console.log('totalSTRKClaimed: ', amountSum / BigInt(10**18))
-
-    const uniqueUsers = await prisma.claims.findMany({
-        distinct: ['claimee'],
-        select: {
-            claimee: true
-        }
-    })
-    console.log('uniqueUsers: ', uniqueUsers.length)
-
-    const nTxLatestBlock = await prisma.claims.findMany({
-        where: {
-            block_number: lastBlock?.block_number
-        }
-    })
-    console.log('nTxLatestBlock: ', nTxLatestBlock.length)
-
-    // nTx prev block
-    const nTxPrevBlock = await prisma.claims.findMany({
-        where: {
-            block_number: lastBlock ? lastBlock.block_number - 1 : 0
-        }
-    })
-    console.log('nTxPrevBlock: ', nTxPrevBlock.length)
+    // // nTx prev block
+    // const nTxPrevBlock = await prisma.claims.findMany({
+    //     where: {
+    //         block_number: lastBlock ? lastBlock.block_number - 1 : 0
+    //     }
+    // })
+    // console.log('nTxPrevBlock: ', nTxPrevBlock.length)
 }
 
 async function nimboraAcc() {

@@ -76,6 +76,7 @@ mod DeFiSpringNFT {
         symbol: ByteArray,
         maxNFTs: u8,
         minEarnings:  LegacyMap::<u8, u128>, // nftId to minEarning map
+        mints: LegacyMap::<(u8, ContractAddress), u8>, // nftId, user -> minted
 
         // a pubkey for offchain signing to auth before NFT mint
         pubkey: felt252,
@@ -233,7 +234,7 @@ mod DeFiSpringNFT {
                 return isMint;
             }
 
-            let balance = self.erc1155.balanceOf(caller, nftId.into());
+            let balance = self.mints.read((nftId.into(), caller));
             if (balance == 0) {
                 // mint only if no prior balance
                 let tokenIds: Array<u256> = array![nftId.into()];
@@ -244,7 +245,7 @@ mod DeFiSpringNFT {
                     tokenIds.span(),
                     values.span()
                 );
-
+                self.mints.write((nftId.into(), caller), 1);
                 return true;
             }
 

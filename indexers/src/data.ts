@@ -36,26 +36,27 @@ async function run() {
     })
     console.log('totalTx: ', totalTx)
     
-    const data = await prisma.claims.findMany({
-        where: {
-        },
-        distinct: ['contract'],
-        select: {
-            contract: true
-        }
-    })
-    console.log('unique contracts: ', data.length)
+    // const data = await prisma.claims.findMany({
+    //     where: {
+    //     },
+    //     distinct: ['contract'],
+    //     select: {
+    //         contract: true
+    //     }
+    // })
+    // console.log('unique contracts: ', data.length)
 
     
     // Can i improve my query?
     const myInfo = await prisma.claims.findMany({
         where: {
-            claimee: standariseAddress('0x028958edc169f1bce827861c55d6756f8d9dd85c75795680b9a824b3e6f4d9fe')
+            claimee: standariseAddress('0x04efcd83955c40136e13f78ee6c012fd1be3d6bdbc72d15197903b856cd1af3c'),
+            // contract: standariseAddress('0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8')
         }
     })
     let sum = BigInt(0);
     const filtered: any[] = [];
-    console.log(myInfo.map(m => {
+    myInfo.map(m => {
         const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
         const amt = BigInt(m.amount);
         sum += amt;
@@ -64,51 +65,55 @@ async function run() {
                 ...m,
             })
         }
+        console.log({
+            tx: m.txHash,
+            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
+        })
         return {
             ...m,
             protocol: c?.protocol,
-            amt: (amt / BigInt(10**18)).toString()
+            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
         }
-    }))
-    console.log(filtered)
-    console.log(filtered.length);
+    })
+    // console.log(filtered)
+    // console.log(filtered.length);
     console.log('myInfo: ', myInfo.length)
     console.log('sum: ', (sum / BigInt(10**18)).toString())
     
 
-    // const totalSTRKClaimed = await prisma.claims.findMany({
-    //     select: {
-    //         amount: true
-    //     },
-    // })
-    // let amountSum = BigInt(0);
-    // totalSTRKClaimed.forEach(claim => {
-    //     amountSum += BigInt(claim.amount)
-    // })
-    // console.log('totalSTRKClaimed: ', amountSum / BigInt(10**18))
+    const totalSTRKClaimed = await prisma.claims.findMany({
+        select: {
+            amount: true
+        },
+    })
+    let amountSum = BigInt(0);
+    totalSTRKClaimed.forEach(claim => {
+        amountSum += BigInt(claim.amount)
+    })
+    console.log('totalSTRKClaimed: ', amountSum / BigInt(10**18))
 
-    // const uniqueUsers = await prisma.claims.findMany({
-    //     distinct: ['claimee'],
-    //     select: {
-    //         claimee: true
-    //     }
-    // })
-    // console.log('uniqueUsers: ', uniqueUsers.length)
+    const uniqueUsers = await prisma.claims.findMany({
+        distinct: ['claimee'],
+        select: {
+            claimee: true
+        }
+    })
+    console.log('uniqueUsers: ', uniqueUsers.length)
 
-    // const nTxLatestBlock = await prisma.claims.findMany({
-    //     where: {
-    //         block_number: lastBlock?.block_number
-    //     }
-    // })
-    // console.log('nTxLatestBlock: ', nTxLatestBlock.length)
+    const nTxLatestBlock = await prisma.claims.findMany({
+        where: {
+            block_number: lastBlock?.block_number
+        }
+    })
+    console.log('nTxLatestBlock: ', nTxLatestBlock.length)
 
-    // // nTx prev block
-    // const nTxPrevBlock = await prisma.claims.findMany({
-    //     where: {
-    //         block_number: lastBlock ? lastBlock.block_number - 1 : 0
-    //     }
-    // })
-    // console.log('nTxPrevBlock: ', nTxPrevBlock.length)
+    // nTx prev block
+    const nTxPrevBlock = await prisma.claims.findMany({
+        where: {
+            block_number: lastBlock ? lastBlock.block_number - 1 : 0
+        }
+    })
+    console.log('nTxPrevBlock: ', nTxPrevBlock.length)
 }
 
 async function nimboraAcc() {
@@ -179,11 +184,36 @@ async function deleteAbove() {
     const data = await prisma.claims.deleteMany({
         where: {
             block_number: {
-                gt: 776469,
+                gt: 1024182,
             }
         }
     })
     console.log('deleted: ', data)
+}
+
+async function getContractsNotTrakced() {
+    const notTracked: any[] = [];
+    const prisma = new PrismaClient();
+    for (let i=0; i<ProcessedContracts.length; ++i) {
+        console.log(`checking: ${i}/${ProcessedContracts.length}`)
+        const addr = ProcessedContracts[i].contractAddress;
+        const data = await prisma.claims.count({
+            where: {
+                contract: standariseAddress(addr)
+            }
+        })        
+        if (data === 0) {
+            notTracked.push({
+                contractAddress: addr,
+                protocol: ProcessedContracts[i].protocol,
+                classHash: ProcessedContracts[i].classHash
+            })
+            console.log('not tracked: ', addr)
+        } else {
+            console.log(`length: ${data}`)
+        }
+    }
+    console.log('notTracked: ', notTracked);
 }
 
 // async function runBulk() {
@@ -194,6 +224,7 @@ async function deleteAbove() {
 //         wh
 //     })
 // }
-run()
+// run()
 // nimboraAcc()
-// deleteAbove();n
+// getContractsNotTrakced();
+deleteAbove();

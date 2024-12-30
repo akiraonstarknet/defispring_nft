@@ -3,6 +3,7 @@ dotenv.config();
 import assert from 'assert'
 import {Account, RawArgs, RpcProvider, TransactionExecutionStatus, extractContractHashes, hash, json, provider} from 'starknet'
 import { readFileSync, existsSync, writeFileSync } from 'fs'
+import { IConfig, Network, Store, getDefaultStoreConfig } from '@strkfarm/sdk';
 
 export function getRpcProvider() {
     assert(process.env.RPC_URL, 'invalid RPC_URL');
@@ -23,13 +24,19 @@ function saveContracts(contracts: any) {
 }
 
 export function getAccount() {
-    assert(process.env.SECRET_FILE_FOLDER, 'invalid SECRET_FILE_FOLDER')
-    assert(process.env.NETWORK, 'invalid NETWORK')
-    let data = JSON.parse(readFileSync(`${process.env.SECRET_FILE_FOLDER}/account_${process.env.NETWORK}.json`, {
-        encoding: 'utf-8'
-    }));
-
-    return new Account(getRpcProvider(), data.address, data.pk);
+    const config: IConfig = {
+        provider: <any>new RpcProvider({nodeUrl: process.env.RPC_URL}),
+        network: Network.mainnet,
+        stage: 'production'
+    }
+    const storeConfig = getDefaultStoreConfig(Network.mainnet);
+    storeConfig.ACCOUNTS_FILE_NAME = 'accounts-orig.json';
+    const store = new Store(config, {
+        ...storeConfig,
+        PASSWORD: process.env.ACCOUNT_SECURE_PASSWORD || '',
+    });
+    
+    return store.getAccount("akira");
 }
 
 export async function myDeclare(contract_name: string) {

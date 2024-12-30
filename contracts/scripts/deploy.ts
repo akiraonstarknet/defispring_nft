@@ -86,11 +86,30 @@ async function set_token_uri() {
 
 }
 
+async function upgrade() {
+    const contractAddr = '0xaa84534f0e0510618ad6a16f24e9a64fe0277b1f1ca799f0bddfec300d870';
+    const cls = await provider.getClassAt(contractAddr);
+    const contract = new Contract(cls.abi, contractAddr, provider);
+    
+    // const { class_hash } = await myDeclare(contractName); 
+    const class_hash = '0x3fc65c46f2c2c52bb2ce5ddbdbf51a7d9240ac06a024b917f0002dcd4c6cefa'
+    const call = contract.populate('upgrade', {
+        newClassHash: class_hash
+    })
+    const tx = await acc.execute([call]);
+    console.log(`tx hash: ${tx.transaction_hash}`);
+    await provider.waitForTransaction(tx.transaction_hash, {
+        successStates: [TransactionExecutionStatus.SUCCEEDED]
+    })
+    console.log('done');
+}
+
 //
-declareDeploy();
+// declareDeploy();
 // updateSettings();
 // set_pub_key();
 // set_token_uri();
+upgrade();
 
 /**
  * Main contract: 0xaa84534f0e0510618ad6a16f24e9a64fe0277b1f1ca799f0bddfec300d870

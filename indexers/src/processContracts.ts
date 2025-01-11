@@ -115,7 +115,7 @@ async function getStartBlock() {
     let block = await provider.getBlockNumber();
     console.log('Current block: ', block);
 
-    const requiredDate = getPreviousWednesday(1);
+    const requiredDate = getPreviousWednesday(2);
     let currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
     console.log('Current block date: ', currentBlockDate);
 
@@ -129,5 +129,5 @@ async function getStartBlock() {
     return block;
 }
 
-run();
-// getStartBlock()
+// run();
+getStartBlock()

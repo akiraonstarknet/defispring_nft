@@ -36,49 +36,49 @@ async function run() {
     })
     console.log('totalTx: ', totalTx)
     
-    // const data = await prisma.claims.findMany({
-    //     where: {
-    //     },
-    //     distinct: ['contract'],
-    //     select: {
-    //         contract: true
-    //     }
-    // })
-    // console.log('unique contracts: ', data.length)
+    const data = await prisma.claims.findMany({
+        where: {
+        },
+        distinct: ['contract'],
+        select: {
+            contract: true
+        }
+    })
+    console.log('unique contracts: ', data.length)
 
     
     // Can i improve my query?
-    const myInfo = await prisma.claims.findMany({
-        where: {
-            claimee: standariseAddress('0x04efcd83955c40136e13f78ee6c012fd1be3d6bdbc72d15197903b856cd1af3c'),
-            // contract: standariseAddress('0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8')
-        }
-    })
-    let sum = BigInt(0);
-    const filtered: any[] = [];
-    myInfo.map(m => {
-        const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
-        const amt = BigInt(m.amount);
-        sum += amt;
-        if (amt > 0) {
-            filtered.push({
-                ...m,
-            })
-        }
-        console.log({
-            tx: m.txHash,
-            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
-        })
-        return {
-            ...m,
-            protocol: c?.protocol,
-            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
-        }
-    })
-    // console.log(filtered)
-    // console.log(filtered.length);
-    console.log('myInfo: ', myInfo.length)
-    console.log('sum: ', (sum / BigInt(10**18)).toString())
+    // const myInfo = await prisma.claims.findMany({
+    //     where: {
+    //         claimee: standariseAddress('0x04efcd83955c40136e13f78ee6c012fd1be3d6bdbc72d15197903b856cd1af3c'),
+    //         // contract: standariseAddress('0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8')
+    //     }
+    // })
+    // let sum = BigInt(0);
+    // const filtered: any[] = [];
+    // myInfo.map(m => {
+    //     const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
+    //     const amt = BigInt(m.amount);
+    //     sum += amt;
+    //     if (amt > 0) {
+    //         filtered.push({
+    //             ...m,
+    //         })
+    //     }
+    //     console.log({
+    //         tx: m.txHash,
+    //         amt: (Number(amt / BigInt(10**15)) / 1000).toString()
+    //     })
+    //     return {
+    //         ...m,
+    //         protocol: c?.protocol,
+    //         amt: (Number(amt / BigInt(10**15)) / 1000).toString()
+    //     }
+    // })
+    // // console.log(filtered)
+    // // console.log(filtered.length);
+    // console.log('myInfo: ', myInfo.length)
+    // console.log('sum: ', (sum / BigInt(10**18)).toString())
     
 
     const totalSTRKClaimed = await prisma.claims.findMany({
@@ -224,7 +224,7 @@ async function getContractsNotTrakced() {
 //         wh
 //     })
 // }
-// run()
+run()
 // nimboraAcc()
 // getContractsNotTrakced();
-deleteAbove();
+// deleteAbove();

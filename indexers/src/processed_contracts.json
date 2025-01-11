@@ -723,5 +723,45 @@
         "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
         "contractAddress": "0x055f7be42f3795062d59fda0b1dfcfde7cf045988eaf50cad75213adb7fdb276",
         "protocol": "zkLend"
+    },
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x0414cf4dc22b33e11d1a5df7fac56c379bf1f50531dd73486cc7a4a851f6969e",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x0141ac799ea17315a2498bc4212df23af77f3d99cc8ac3c4770a10b25fc5e4e1",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x07829273a63af512cb8ae37b3c213db1fd1c9a9d722d2629e19d30cafc80d7c0",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+        "contractAddress": "0x05709576ea42870bfe0af5360f2d22eb96ab7d9fef933894bc1d304071ebfa94",
+        "protocol": "Nostra"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x01c887811c73800d3b1a6980098102475b3351d5df60d1d660afd90e9b4c5238",
+        "protocol": "Ekubo"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x04e7a5236c69bff70dac3447173edca90a8e24fd1e5724369b56fbf623642a00",
+        "protocol": "zkLend"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x0250e84a9b114fdae7a1e5f737d2569d9585e4e3d830032b17b569f3bbde4edd",
+        "protocol": "Ekubo"
+    },
+    {
+        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+        "contractAddress": "0x004c6b97a0c9cdcd09fea3f03fcf41ef94c726a03fd8a5bb546624ed62844fad",
+        "protocol": "zkLend"
     }
 ]

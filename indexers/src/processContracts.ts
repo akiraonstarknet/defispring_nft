@@ -129,5 +129,5 @@ async function getStartBlock() {
     return block;
 }
 
-// run();
-getStartBlock()
+run();
+// getStartBlock()

@@ -4,6 +4,7 @@ import { Contract, RpcProvider } from 'starknet'
 import fs from 'fs';
 import ProcessedContracts from './processed_contracts.json';
 import NewContracts from './new_contracts.json';
+import { standariseAddress } from './data';
 
 /**
  * Reads distribution contracts from a url
@@ -29,7 +30,7 @@ async function run() {
     console.log('Total contracts (includes duplicates): ', RawContracts.length);
 
     const uniqueClasses: string[] = [];
-    const processedContracts: ContractInfo[] = [];
+    const processedContracts: ContractInfo[] = ProcessedContracts;
     const newContracts: ContractInfo[] = [];
     const contractClassMap = new Map<string, string>();
 
@@ -54,16 +55,17 @@ async function run() {
             }
             if (!uniqueClasses.includes(cls))
                 uniqueClasses.push(cls)
-            processedContracts.push({
-                classHash: cls,
-                contractAddress: contract.Address,
-                protocol: contract['Protocol Name']
-            });
+
             
             // separately store new contracts each round
             const exists = ProcessedContracts.find(p => p.contractAddress === contract.Address);
             if (!exists) {
                 newContracts.push({
+                    classHash: cls,
+                    contractAddress: contract.Address,
+                    protocol: contract['Protocol Name']
+                });
+                processedContracts.push({
                     classHash: cls,
                     contractAddress: contract.Address,
                     protocol: contract['Protocol Name']
@@ -78,6 +80,68 @@ async function run() {
         console.log(`Processed ${i + 1}/${RawContracts.length} contracts. Unique classes: ${uniqueClasses.length}`);
     }
 
+    // fetch from Ekubo API
+    const EKUBO_API = 'https://starknet-mainnet-api.ekubo.org/airdrops/0x0055741fd3ec832f7b9500e24a885b8729f213357be4a8e209c4bca1f3b909ae?token=0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d';
+    const resultEkubo = await fetch(EKUBO_API);
+    // console.log('Ekubo API response: ', await resultEkubo.json());
+    const items = (await resultEkubo.json());
+    for (let i=0; i<items.length; ++i) {
+        const info = items[i];
+        const claimContract = info.contract_address;
+        const exists = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === standariseAddress(claimContract));
+        const exists2 = processedContracts.find(p => standariseAddress(p.contractAddress) === standariseAddress(claimContract));
+        if (!exists && !exists2) {
+            console.log(`New contract: ${claimContract}`);
+            const cls = await provider.getClassHashAt(claimContract);
+            newContracts.push({
+                classHash: cls,
+                contractAddress: standariseAddress(claimContract),
+                protocol: 'Ekubo'
+            });
+            processedContracts.push({
+                classHash: cls,
+                contractAddress: standariseAddress(claimContract),
+                protocol: 'Ekubo'
+            })
+        }
+    }
+
+    const ZKLEND_API = 'https://app.zklend.com/api/reward/all/0x541681b9ad63dff1b35f79c78d8477f64857de29a27902f7298f7b620838ea'
+    const resultZklend = await fetch(ZKLEND_API);
+    const itemsZklend = (await resultZklend.json());
+    for (let i=0; i<itemsZklend.length; ++i) {
+        const info = itemsZklend[i];
+        const claimContract = info.claim_contract;
+        const exists = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === standariseAddress(claimContract));
+        const exists2 = processedContracts.find(p => standariseAddress(p.contractAddress) === standariseAddress(claimContract));
+        if (!exists && !exists2) {
+            console.log(`New contract: ${claimContract}`);
+            const cls = await provider.getClassHashAt(claimContract);
+            newContracts.push({
+                classHash: cls,
+                contractAddress: standariseAddress(claimContract),
+                protocol: 'zkLend'
+            });
+            processedContracts.push({
+                classHash: cls,
+                contractAddress: standariseAddress(claimContract),
+                protocol: 'zkLend'
+            })
+        }
+    }
+   
+    console.log(newContracts);
+    const ekuboContractsLen = newContracts.filter((n) => n.protocol == 'Ekubo').length;
+    // if (ekuboContractsLen != 1) {
+    //     console.error(`Expected 1 ekubo contract, found: ${ekuboContractsLen}`);
+    //     throw new Error(`Ekubo err`);
+    // }
+       
+    // const nostraContractsLend = newContracts.filter((n) => n.protocol == 'Nostra').length;
+    // if (nostraContractsLend != 2) {
+    //     console.error(`Expected 2 Nostra contract, found: ${nostraContractsLend}`);
+    //     throw new Error(`Nostra err`);
+    // }
     fs.writeFileSync('./src/processed_contracts.json', JSON.stringify(processedContracts), {
         encoding: 'utf-8'
     });fs.writeFileSync('./src/new_contracts.json', JSON.stringify(newContracts), {

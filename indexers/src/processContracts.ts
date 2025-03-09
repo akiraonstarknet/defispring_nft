@@ -132,12 +132,14 @@ async function run() {
    
     console.log(newContracts);
     const ekuboContractsLen = newContracts.filter((n) => n.protocol == 'Ekubo').length;
+    console.log(`Ekubo contracts: ${ekuboContractsLen}`);
     // if (ekuboContractsLen != 1) {
     //     console.error(`Expected 1 ekubo contract, found: ${ekuboContractsLen}`);
     //     throw new Error(`Ekubo err`);
     // }
        
-    // const nostraContractsLend = newContracts.filter((n) => n.protocol == 'Nostra').length;
+    const nostraContractsLend = newContracts.filter((n) => n.protocol == 'Nostra').length;
+    console.log(`Nostra contracts: ${nostraContractsLend}`);
     // if (nostraContractsLend != 2) {
     //     console.error(`Expected 2 Nostra contract, found: ${nostraContractsLend}`);
     //     throw new Error(`Nostra err`);
@@ -147,7 +149,7 @@ async function run() {
     });fs.writeFileSync('./src/new_contracts.json', JSON.stringify(newContracts), {
         encoding: 'utf-8'
     });
-    console.log(`Unique classes: ${JSON.stringify(uniqueClasses)}`)
+    // console.log(`Unique classes: ${JSON.stringify(uniqueClasses)}`)
     console.log('Contracts written to src/processed_contracts.json');
 
     getStartBlock();

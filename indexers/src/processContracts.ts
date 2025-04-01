@@ -20,7 +20,7 @@ interface ContractInfo {
 }
 
 const provider = new RpcProvider({
-    nodeUrl: process.env.RPC_URL
+    nodeUrl: process.env.MAINNET_RPC_URL
 });
 
 async function run() {

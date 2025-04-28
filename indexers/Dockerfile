@@ -33,4 +33,4 @@ RUN gzip -d sink-postgres-x86_64-linux.gz
 RUN chmod +x sink-postgres-x86_64-linux
 RUN /root/.local/share/apibara/bin/apibara plugins install --file sink-postgres-x86_64-linux
 
-ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=3", "--status-server-address=0.0.0.0:1234"]
+ENTRYPOINT ["/root/.local/share/apibara/bin/apibara", "run", "--allow-env=.env", "src/indexer.ts", "--sink-id=4", "--status-server-address=0.0.0.0:1234"]

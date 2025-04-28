@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 import ProcessedContracts from './processed_contracts.json';
 import { num } from "starknet";
 import dotenv from 'dotenv';
+// import { NewContracts } from "./contracts";
+import NewContracts from './new_contracts.json';
 dotenv.config();
 
 export function standariseAddress(address: string | bigint) {
@@ -183,8 +185,11 @@ async function deleteAbove() {
     const prisma = new PrismaClient();
     const data = await prisma.claims.deleteMany({
         where: {
-            block_number: {
-                gt: 1024182,
+            // block_number: {
+            //     gt: 1024182,
+            // },
+            contract: {
+                in: NewContracts.map(c => standariseAddress(c.contractAddress))
             }
         }
     })
@@ -216,15 +221,17 @@ async function getContractsNotTrakced() {
     console.log('notTracked: ', notTracked);
 }
 
-// async function runBulk() {
-//     const addresses: string[] = [];
-//     const prisma = new PrismaClient();
+if (require.main === module) {
+    // async function runBulk() {
+    //     const addresses: string[] = [];
+    //     const prisma = new PrismaClient();
 
-//     const data = await prisma.claims.findMany({
-//         wh
-//     })
-// }
-run()
-// nimboraAcc()
-// getContractsNotTrakced();
-// deleteAbove();
+    //     const data = await prisma.claims.findMany({
+    //         wh
+    //     })
+    // }
+    run()
+    // nimboraAcc()
+    // getContractsNotTrakced();
+    // deleteAbove();
+}

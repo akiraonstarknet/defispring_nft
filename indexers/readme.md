@@ -21,4 +21,4 @@ sink-id can be anything, but use same always
 4. Run sync indexer
 5. Check latest block, ensures its where indexer left, delete extra
 6. git push
-5. restart main indexe
+5. restart main indexer

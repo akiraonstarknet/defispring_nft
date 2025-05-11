@@ -58,7 +58,7 @@ async function run() {
 
             
             // separately store new contracts each round
-            const exists = ProcessedContracts.find(p => p.contractAddress === contract.Address);
+            const exists = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === standariseAddress(contract.Address));
             if (!exists) {
                 newContracts.push({
                     classHash: cls,
@@ -181,7 +181,7 @@ async function getStartBlock() {
     let block = await provider.getBlockNumber();
     console.log('Current block: ', block);
 
-    const requiredDate = getPreviousWednesday(3);
+    const requiredDate = getPreviousWednesday(2);
     let currentBlockDate = new Date((await provider.getBlockWithTxs(block)).timestamp * 1000);
     console.log('Current block date: ', currentBlockDate);
 
@@ -195,5 +195,5 @@ async function getStartBlock() {
     return block;
 }
 
-// run();
-getStartBlock()
+run();
+// getStartBlock()

@@ -25,7 +25,7 @@ export default function (runtimeConfig: ApibaraRuntimeConfig) {
 // Add all contracts to monitor for events into the filter
 const CONTRACTS = Object.keys(Contracts).map(category => {
   return Contracts[category].contracts.map(c => {
-      return c.address
+      return standardise(c.address)
   })
 }).flat();
 

@@ -2,14 +2,12 @@
 // - used to set all distribution contracts of by protocol
 // - and classified by class hash
 
-import { v1alpha2 } from "https://esm.run/@apibara/starknet@latest"
-
 interface IContractInfo {
     address: string,
     protocol: string,
 }
 
-export type EventProcessor = (event: v1alpha2.IEvent) => {
+export type EventProcessor = (event: any) => {
     claimee: string,
     amount: bigint,
     eventKey: "SNF" | "EKUBO"

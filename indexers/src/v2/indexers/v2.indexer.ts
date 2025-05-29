@@ -5,9 +5,11 @@ import { useLogger } from "@apibara/indexer/plugins";
 import { drizzleStorage } from "@apibara/plugin-drizzle";
 import { claims } from "@prisma/client";
 import type { ApibaraRuntimeConfig } from "apibara/types";
-import type {
-  ExtractTablesWithRelations,
-  TablesRelationalConfig,
+import {
+  and,
+  eq,
+  type ExtractTablesWithRelations,
+  type TablesRelationalConfig,
 } from "drizzle-orm";
 import type { PgDatabase, PgQueryResultHKT } from "drizzle-orm/pg-core";
 import * as schema from "./drizzle/schema";
@@ -112,10 +114,33 @@ export function createIndexer<
 
       if (records.length) {
         logger.log(`Inserting ${records.length} records`);
-        await database
-          .insert(schema.claims)
-          .values(records)
-          .execute()
+        for (let i = 0; i < records.length; i++) {
+          const record = records[i];
+          const existing = await database
+          .selectDistinct()
+          .from(schema.claims).where(and(
+            eq(schema.claims.block_number, record.block_number),
+            eq(schema.claims.txIndex, record.txIndex),
+            eq(schema.claims.eventIndex, record.eventIndex),
+          )).limit(1);
+
+          if (existing.length) {
+            await database.update(schema.claims)
+            .set(record)
+            .where(and(
+              eq(schema.claims.block_number, record.block_number),
+              eq(schema.claims.txIndex, record.txIndex),
+              eq(schema.claims.eventIndex, record.eventIndex),
+            ))
+            .execute();
+            console.log(`Updated existing record`);
+          } else {
+            await database
+              .insert(schema.claims)
+              .values(record)
+              .execute()
+          }
+        }
       }
     },
   });

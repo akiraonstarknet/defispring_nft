@@ -30,7 +30,7 @@ const CONTRACTS = Object.keys(newContracts).map(category => {
 }).flat();
 
 // ! REMEMBER TO UPDATE THIS ON EACH SYNC
-const MAX_BLOCK = 1386493;
+const MAX_BLOCK = 1399385;
 
 export function createIndexer<
   TQueryResult extends PgQueryResultHKT,
@@ -46,7 +46,7 @@ export function createIndexer<
   return defineIndexer(StarknetStream)({
     streamUrl: "https://starknet.preview.apibara.org",
     finality: "accepted",
-    startingBlock: 1361225n, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
+    startingBlock: 1400136n, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
     plugins: [
       drizzleStorage({
         db: database,

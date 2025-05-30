@@ -27,7 +27,7 @@ export function getDB(connectionString: string) {
     });
     // Set statement timeout for queries
     pool.on('connect', (client) => {
-        client.query('SET statement_timeout TO 10000'); // Timeout in milliseconds
+        client.query('SET statement_timeout TO 60000'); // Timeout in milliseconds
     });
     return drizzle(pool, { schema });
 }

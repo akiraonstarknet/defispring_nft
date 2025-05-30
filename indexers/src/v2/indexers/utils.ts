@@ -25,6 +25,10 @@ export function getDB(connectionString: string) {
             rejectUnauthorized: false // Set to true if you have a valid CA certificate
         }
     });
+    // Set statement timeout for queries
+    pool.on('connect', (client) => {
+        client.query('SET statement_timeout TO 10000'); // Timeout in milliseconds
+    });
     return drizzle(pool, { schema });
 }
 

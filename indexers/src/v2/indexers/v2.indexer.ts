@@ -115,6 +115,7 @@ export function createIndexer<
       if (records.length) {
         logger.log(`Inserting ${records.length} records`);
         for (let i = 0; i < records.length; i++) {
+          console.log(`Processing record ${i + 1} of ${records.length}`);
           const record = records[i];
           const existing = await database
           .selectDistinct()
@@ -124,7 +125,10 @@ export function createIndexer<
             eq(schema.claims.eventIndex, record.eventIndex),
           )).limit(1);
 
+          const isFound = existing.length > 0;
+          console.log(`Record found: ${isFound}`, existing);
           if (existing.length) {
+            console.log(`Record already exists, updating...`);
             await database.update(schema.claims)
             .set(record)
             .where(and(
@@ -135,10 +139,12 @@ export function createIndexer<
             .execute();
             console.log(`Updated existing record`);
           } else {
+            console.log(`Inserting new record...`);
             await database
               .insert(schema.claims)
               .values(record)
               .execute()
+            console.log(`Inserted new record`);
           }
         }
       }

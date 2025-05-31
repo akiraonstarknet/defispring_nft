@@ -1,0 +1,1 @@
+yarn build:v2 && yarn start:v2

@@ -3,7 +3,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 WORKDIR /app
 ADD src /app/src
-COPY .env tsconfig.json apibara.config.ts package.json schema.prisma /app/
+COPY .env tsconfig.json apibara.config.ts package.json schema.prisma run.sh /app/
 
 # install deps
 RUN apt-get -y update; apt-get -y install curl
@@ -25,6 +25,10 @@ RUN apt-get install -y nodejs
 RUN node -v && npm -v
 RUN whereis node
 
+# install pm2
+RUN npm install -g pm2
+RUN whereis pm2
+
 # yarn install
 RUN npm install -g yarn
 RUN npm install -g ts-node
@@ -32,6 +36,8 @@ RUN yarn install
 RUN npx prisma generate
 RUN whereis yarn
 WORKDIR /app
-RUN yarn build:v2
 
-ENTRYPOINT ["yarn", "start:v2"]
+# chmod
+RUN chmod +x run.sh
+
+ENTRYPOINT ["pm2", "start", "run.sh", "--no-daemon", "--time"]

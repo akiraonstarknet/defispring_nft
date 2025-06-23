@@ -30,7 +30,7 @@ const CONTRACTS = Object.keys(newContracts).map(category => {
 }).flat();
 
 // ! REMEMBER TO UPDATE THIS ON EACH SYNC
-const MAX_BLOCK = 1399385;
+const MAX_BLOCK = 1513766;
 
 export function createIndexer<
   TQueryResult extends PgQueryResultHKT,
@@ -44,15 +44,15 @@ export function createIndexer<
   config: ApibaraRuntimeConfig;
 }) {
   return defineIndexer(StarknetStream)({
-    streamUrl: "https://starknet.preview.apibara.org",
+    streamUrl: "https://mainnet.starknet.a5a.ch",
     finality: "accepted",
-    startingBlock: 1400136n, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
+    startingBlock: 1370000n, // ! REMEMBER TO UPDATE THIS ON EACH SYNC
     plugins: [
       drizzleStorage({
         db: database,
         idColumn: "id",
         persistState: true,
-        indexerName: "v2.indexer",
+        indexerName: "sync.indexer2",
       }),
     ],
     filter: {
@@ -112,7 +112,7 @@ export function createIndexer<
         logger.info(
           `Starknet: Saving record: ${JSON.stringify(claim)}`
         );
-        records.push(claim);
+        // records.push(claim);
       }
 
       if (records.length) {

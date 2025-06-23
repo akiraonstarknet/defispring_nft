@@ -21,13 +21,16 @@ async function run() {
         orderBy: {
             block_number: 'desc'
         },
+        where: {
+            contract: standariseAddress('0xbdb9c1df999dd2f91b96456a34b228076c0e62cd98837cbfc9156dd37e3891')
+        },
         select: {
             block_number: true,
             cursor: true
         }
     })
     console.log('lastBlock: ', lastBlock)
-
+    // return;
     const totalTx = await prisma.claims.count({
         where: {
             block_number: {
@@ -37,52 +40,53 @@ async function run() {
         }
     })
     console.log('totalTx: ', totalTx)
+    return;
     
-    const data = await prisma.claims.findMany({
-        where: {
-        },
-        distinct: ['contract'],
-        select: {
-            contract: true
-        }
-    })
-    console.log('unique contracts: ', data.length)
+    // const data = await prisma.claims.findMany({
+    //     where: {
+    //     },
+    //     distinct: ['contract'],
+    //     select: {
+    //         contract: true
+    //     }
+    // })
+    // console.log('unique contracts: ', data.length)
 
     
     // Can i improve my query?
-    // const myInfo = await prisma.claims.findMany({
-    //     where: {
-    //         claimee: standariseAddress('0x04efcd83955c40136e13f78ee6c012fd1be3d6bdbc72d15197903b856cd1af3c'),
-    //         // contract: standariseAddress('0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8')
-    //     }
-    // })
-    // let sum = BigInt(0);
-    // const filtered: any[] = [];
-    // myInfo.map(m => {
-    //     const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
-    //     const amt = BigInt(m.amount);
-    //     sum += amt;
-    //     if (amt > 0) {
-    //         filtered.push({
-    //             ...m,
-    //         })
-    //     }
-    //     console.log({
-    //         tx: m.txHash,
-    //         amt: (Number(amt / BigInt(10**15)) / 1000).toString()
-    //     })
-    //     return {
-    //         ...m,
-    //         protocol: c?.protocol,
-    //         amt: (Number(amt / BigInt(10**15)) / 1000).toString()
-    //     }
-    // })
-    // // console.log(filtered)
-    // // console.log(filtered.length);
-    // console.log('myInfo: ', myInfo.length)
-    // console.log('sum: ', (sum / BigInt(10**18)).toString())
+    const myInfo = await prisma.claims.findMany({
+        where: {
+            claimee: standariseAddress('0x003c27ae437552dbc0c61f1029d63973d095874651f7caf44c8f54c61dbb5105'),
+            // contract: standariseAddress('0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8')
+        }
+    })
+    let sum = BigInt(0);
+    const filtered: any[] = [];
+    myInfo.map(m => {
+        const c = ProcessedContracts.find(p => standariseAddress(p.contractAddress) === m.contract);
+        const amt = BigInt(m.amount);
+        sum += amt;
+        if (amt > 0) {
+            filtered.push({
+                ...m,
+            })
+        }
+        console.log({
+            tx: m.txHash,
+            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
+        })
+        return {
+            ...m,
+            protocol: c?.protocol,
+            amt: (Number(amt / BigInt(10**15)) / 1000).toString()
+        }
+    })
+    // console.log(filtered)
+    // console.log(filtered.length);
+    console.log('myInfo: ', myInfo.length)
+    console.log('sum: ', (sum / BigInt(10**18)).toString())
     
-
+    return;
     const totalSTRKClaimed = await prisma.claims.findMany({
         select: {
             amount: true
@@ -221,6 +225,24 @@ async function getContractsNotTrakced() {
     console.log('notTracked: ', notTracked);
 }
 
+async function getConctractsWithNoClaims() {
+    const processed = ProcessedContracts.map(c => standariseAddress(c.contractAddress));
+    const prisma = new PrismaClient();
+    const data = await prisma.claims.findMany({
+        where: {
+            contract: {
+                in: processed
+            }
+        },
+        distinct: ['contract'],
+        select: {
+            contract: true
+        }
+    })
+    const missing = processed.filter(p => !data.find(d => d.contract === p));
+    console.log('missing: ', missing);
+}
+
 if (require.main === module) {
     // async function runBulk() {
     //     const addresses: string[] = [];
@@ -230,7 +252,8 @@ if (require.main === module) {
     //         wh
     //     })
     // }
-    run()
+    // run()
+    getConctractsWithNoClaims();
     // nimboraAcc()
     // getContractsNotTrakced();
     // deleteAbove();

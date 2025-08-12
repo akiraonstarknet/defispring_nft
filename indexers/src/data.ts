@@ -21,9 +21,6 @@ async function run() {
         orderBy: {
             block_number: 'desc'
         },
-        where: {
-            contract: standariseAddress('0xbdb9c1df999dd2f91b96456a34b228076c0e62cd98837cbfc9156dd37e3891')
-        },
         select: {
             block_number: true,
             cursor: true
@@ -240,7 +237,11 @@ async function getConctractsWithNoClaims() {
         }
     })
     const missing = processed.filter(p => !data.find(d => d.contract === p));
-    console.log('missing: ', missing);
+    console.log('missing: ', missing.map(m => ({
+        contractAddress: m,
+        classHash: '',
+        protocol: ''
+    })));
 }
 
 if (require.main === module) {
@@ -252,8 +253,8 @@ if (require.main === module) {
     //         wh
     //     })
     // }
-    // run()
-    getConctractsWithNoClaims();
+    run()
+    // getConctractsWithNoClaims();
     // nimboraAcc()
     // getContractsNotTrakced();
     // deleteAbove();

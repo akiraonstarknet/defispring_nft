@@ -22,7 +22,7 @@ export function getDB(connectionString: string) {
     const pool = new pg.Pool({
         connectionString: connectionString,
         ssl: {
-            rejectUnauthorized: false // Set to true if you have a valid CA certificate
+            rejectUnauthorized: true // Set to true if you have a valid CA certificate
         }
     });
     // Set statement timeout for queries

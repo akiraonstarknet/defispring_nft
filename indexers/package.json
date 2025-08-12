@@ -12,7 +12,7 @@
     "start:v2": "apibara start --dir ./src/v2 --indexer v2",
     "build:v2": "apibara build --dir ./src/v2",
     "sync": "apibara run --allow-env=.env src/sync.ts --sink-id=spring-131 --status-server-address=0.0.0.0:1234",
-    "sync:v2": "build:v2 && apibara start --dir ./src/v2 --indexer sync",
+    "sync:v2": "yarn run build:v2 && apibara start --dir ./src/v2 --indexer sync",
     "start-nimbora": "apibara run --allow-env=.env src/nimbora_indexer.ts --sink-id=2 --status-server-address=0.0.0.0:1234",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

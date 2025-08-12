@@ -1,1122 +1,1272 @@
 [
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x00dc347ea9e7dc2a307e853b97e7189dfb08679a98e8d5ba549a1872febf2e5d",
-        "protocol": "10kSwap"
-    },
-    {
-        "classHash": "0x21c6c54d027a8d37077b9b45e0aea4c5f22e40c59aba378f64e8cecc6b4a944",
-        "contractAddress": "0x078597e910132071274f2664664AB069cc0A4682f73E701D723B6fC2E8930b1b",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05eb02e164f78fd91b9be6a0b9b3aa02c936db485bd760730f65711533c70a26",
-        "protocol": "Haiko"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x027dee8c8c7f28d67bc771afe0c786bfb59d78f0e1ce303a86006b91b98dc3cf",
-        "protocol": "Jediswap_v1"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x005763f02381e89C6894FFEA078D1CF9e58dA0EAd33d5B52aA608ACc04063053",
-        "protocol": "MySwap"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x6eb587e14ebd9556db09f8d5854ae54bc24736e0e163443b3f7547e6cc908ea",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0575a33680cca4beb4c3efb7297b7ee0f7bb4e672a9149c4691f1409e6c94322",
-        "protocol": "Sithswap"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07e71f1efb9cb53253627449b5599842daa61c68bb04743609a96111a94f0f3b",
-        "protocol": "StarkDefi"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x079fea253b4424e0d4bf251c97b0b0f70e682b3d86952b8f534f150b05ae9afe",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x6f80b8e79c5a4f60aaa1d5d251e2dfc55496ed748f96cf38c034de6d578f3f",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x054ead9cbb7c140dd4f653aaad1f935ba8f8c002a2b8afea77793fdf8d1d80d3",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x7df3257d11cdbea698450bfa0b54f219e40447c4920511a74784d2f4ddac017",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03a3cc51e76135caee3473680a11f64db87537a0252f805d60e69f31e1a7e9b4",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x5eb02e164f78fd91b9be6a0b9b3aa02c936db485bd760730f65711533c70a26",
-        "protocol": "Haiko"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x354ae0842a8d49069f03f61701eaacc19733ec35352724f420acda500b8bedb",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x12d036d4822099814978b70404fc7cce8a1aeeaa6007d0889fa4f04225286b3",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x02e20db0cd0af6739ff3e3003ea6932409867040b227bf9ba822239e5ba0dcaf",
-        "protocol": "Hashstack"
-    },
-    {
-        "classHash": "0x6e150953b26271a740bf2b6e9bca17cc52c68d765f761295de51ceb8526ee72",
-        "contractAddress": "0x051ba9be967d17aaafac92f9bc7ca4b035dfd3c4a97b32be1773f63e27b0526a",
-        "protocol": "Nimbora"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x07bbdf36eb04b347e1ecd9b9b37eeac1688fa252db68888a79fdef358667feb2",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x3d3c4f7ae66c46312abcd32b7382685a1f0f15f0851c7487e317723074b1bdf",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0165e9f32fbd734f0ee34162b0bca57a421d4dc74573c4fc8f8f7a30e3a3d2ec",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01a80ae02f00b5fbd4f54e49269e41e86b9ac17e41ca044b70b03a4ccc6208ca",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x034f8ebe031e4b76de56020b69a42b919139f58cb6e574026fad69b1031b1500",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x4445c44da38613f2ab3a728c8dfd7d22e5fca270cc6a1ecf7daeffc68852920",
-        "protocol": "ZKX"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x00424e20c1d50a7dc2aa3b098f4da6dcb4b1fe19b64726de40fa2e46f0ea1530",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x039e67f782da34e09fc8483eb8820cf8036e622639c6823d1d1cc349192d93cf",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03d23bec5d2733adb0d93a397144a348b3394e5a9637dc2ed9ebe185fcea1584",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03ed86b38abb1af8b97d8b3fa1aa4298d5a7eafe303181ba234adf7309236e34",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07838fe8cdd61eb445f7773d9648476b571f17242058859ed7fba9074ee915d1",
-        "protocol": "Carmine"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x7ed46700bd12bb1ee8a33a8594791003f9710a1ab18edd958aed86a8f82d3d1",
-        "protocol": "Nimbora"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x053599a9dd14f5a0274636133cd9bac94698b06d90aafe180198370e10de05a6",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x06b0174a66234bebe7e89c4c160726ed04f35fa36a43da567ecd9d71012f0be8",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01b5b8e397940cbd3fd8f070826db922b550d23ae3af74d1c76763a8a4d3874a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0316ec925258619ae2df09f595a521c69210528d638824e48d1d99404810e59a",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04200eeaa4720dfbcc1de344bf9005b40fd334070b63ac2ba8e03f6b9277a2f5",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x004f179404857995c250eeb0282153886df4da1b6cbe66fe1b98ce70aee09621",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x06b3f806a76a857b661f32db07e41800a0cc2c228dd484a610f9cc28a2903e7a",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x014563b238d00c0a71fc7c4acbc056cda3c48a7fb61f60516a635f5a448fedaa",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0453bd894cb253d2c30e8d8fb327c2d3ee5d3cc4643d9ff37ef0235e49b6fce5",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x042a0f5b02339cd2c9f308295f8b73d6b15fcbbdb654ca879e117e3444d4a6b0",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x02e83cfab80d28f82a590513cb8b5f21125622e902ab72016099582fde99da0b",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x02d25134a16e54b507ef3a1217aa4b5ac5234df48030c50d299a0571e1c53c35",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x035861d7ebcdc4437b15b5afe6b2a0b586e4f974f235c8e6a19a0519562d6bc2",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x00db7a187d50a4ca88396bb97dd375ae308f71e7a2eb7d2a1ce887b7f808c1a2",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0209d7c2559b6bd4159c41660a5d58ea2641ac35c030f8e993d01f2a4fe10a20",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x06bd37a1211fa93e1212b2716c2e26635be9f9fa3e540908756b4d3b0fbc8723",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07ed46700bd12bb1ee8a33a8594791003f9710a1ab18edd958aed86a8f82d3d1",
-        "protocol": "Nimbora"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x057623cb51e5cca0775d9d3c5cd3cb06b833f020169fff45fad0a530aba5279e",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07ddaec5b387b2e1c2608b2b9b645a9c963fa48dbba96785d4978b0e4f2d3391",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0469c17745cfead24637baa36ae9f7c0e40d04f680325f0d6c6e34d1d76dbd22",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x023bb4d7008f49361a883019e00466f3247f0da83b77a4f0b8e2326b32a94b62",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0387f3eb1d98632fbe3440a9f1385Aec9d87b6172491d3Dd81f1c35A7c61048F",
-        "protocol": "Vesu"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x043229f6b274f9deb687c0a738e3dd5a17f1cd72abac68843b37ce1ee0acdc50",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x063bf2cd64938746437eb7a1f551666ebe5ac853b51f54eab0e3c0eb158c6f26",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0021cf27d9fc887e59538af65507c3dde24a62c04c1a8f6365750e7d74cbab15",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0360bbd8a26a2e82b80e2dbfff346ed98565348f1c625c451f4e00cf6d213b1e",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0039cae3c22bc27689b43c4e6494044107490ecb711f89c06aec202fd80ddc03",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0027500e7657db8ec576bf419611d640fa23d5f5bac6b1b543c9fc6fc6eec24c",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03041489fb289560b1c118d7fff78cd55b3007b24ec4ee659a9a8d313fb8672d",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x02094004042485b2b4aa5192211443f960b15e0f622c07fa6b38c25c318e77ba",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x04ee020cc69be671b81248ae780eebaf652de490c95ca3c0d821ee2dd80a7fdb",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04fc6aa08cd359710f619476074e0ff7e7f82532d6fb1b3960b5818a796f75e3",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x041ae8cae25b8b723aaa5af424b979bbf37c778f0435cee87f010a4f461eaeb7",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x222149da86b5dbd8c3aaf3ec48b6da44de5f513a588522cd6edfdd2ca05b1a8",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07ac27ad2c6bdeb2ccc3d4afb26c87f58439a37ec49b7b0aec8f7ac8e572902f",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x008faa2edc6833a6ad0625f1128d56cf471c3f9649ff2201d9ef49d7e9bb18de",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0745b7a2edcf5612049c588a26ab75753c4577ff0a0e32d62edea1a4ef2782c5",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x01c85474d2539bc6ffe0a9808b0afc980ac56bd97a15222464cd9de88e5ed7e3",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x3b62c30fe68e401f44570d8129828af18b2a9f8fd1462ee4f961dbd36c8fda5",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0201bed466ee86ed71f91104fe477d4ad25b817f734c55ba3b2ecf08eca75a51",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x007a7e603deece06f5c2b3859ca4a3b81e991b7629fa4203ff2ba883952572ca",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07b8b7d9c16cfc00e475065ad5eaa740899355d0a982c1a4249af360462673a2",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x00703fd2ea6f6e694427cd87189e77fcb5beb2daa404583d2216686dad7cd1c2",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x1a6e6394abc1d560adc98edbf2e6c40dd0b625b5f37fe11ec59bd495dd5ee2e",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x327b1449835ec9c685b7c196576041359020fa10829f6a99feada8245f97af6",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x30d1ad842a36b8d3d047cd3f7470bbd44c2b50a01d9702944b0b96cc4c03632",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x48319c00fbfe3ce6ed148c7c6c56d8ca8c38e553d3fa364ded7905cc321bb6",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x04068dd4fc5e88ec6dab42878c234e7e0245b86e0783e6c732ee3e2972cc5d7c",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x071c22b3ec86f72739bb5846eda3ad2f58745b1ae6b041f9ceda55ce15991d43",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x314341cc731260254db9efd6a309cd31af03cde435869d6ad7ad9d5b3552866",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x065ccbcd9dbff2a3436e233fdef9e2204b7da5f7aa929126db4bb4216a2ef6d3",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0271b5bad64f7b193d98185491be7a5eb5234c7802a77ef4445ef8119250783a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x051d1820021439813ed35e7ff9e05fae5559f5997ddb4f64381533bf772ad5a1",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x6af395817d0b2b01bcb9cb4f7360318ef3cf361e36fcc2d62e2f3390efb8f2e",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x384ec8b5c41e637c099363dbe7a5e997bdb99c5fd9ec60f74ea67ef47c54a79",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x061d8a66d6cfafdb4c719e510c80442bf9f870c228606db89b355e2ca30b9ea7",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0400d5e21633a1ee11b5b806be3c51ada3446cc51dfe2cc4e8ed6291c5ce8602",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0099fd1f0d3f019e379c5d2c8808045da5ab509cfd88873c1f658833600ceeaa",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03766ad221286f536405ab3e6690ab6ec6da3e32c14e756660ff7b854e0fab10",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x034a800f61f2254495393705e577a6a4386e5666c2225def1908fe466177c7b9",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x06c9efe5fe86c3bccd63b8bed6675452938bcf9a9cd86eecee712251973b4f74",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x317af77469948a348f04ea172cbc8bb858ad88fd076c2a69cc952d1de73592c",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x021ad3449f3e4d19671e7f7dd528e8f5bdd70df7f807150fb7a0806d831c274d",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x008965c75b15f875e151d58b7e646f6048207551d8bab6fc3ac0fa090d9db050",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x1b4162e15f27768a442aa37c8c2de0d79b65257ada63bd3b7e6db1b100b5fa1",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x01a9acedc9a858ec3a2b6e5b2540aab67c6fab3376c5d56b44dfc3c18d727663",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0453ec6d0a035905c3c6c33419c4968f25807bc61ab4f6c88e5c6edfc41ef7d9",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x011af47961de0de9ad82df1519de63b6f802042177fa85651600335dd1ee270e",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x7da3010578026bd73a48b72bdf7fabe7e7669b4425b4b1567060e5740bc861a",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03bfa91cff8a8515d96382ec20ce7cc1337c11894c69c9131797a20dfea79928",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0415d4e77c0507434cc38ad523a20f9fd5155a4267a86f99bc8b787284f644f3",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x02fb7fccac476f59c90d707d0260901d5325ad327928bfab8a463e84610ee5de",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x02ada1f8aff9b50c1816e1054260f8e5d41cbdcd5f4945be1e7924514ff4cc93",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x53d2784a843ee1bb614c662db972b38a5180941b56fe01d81c0dfa9657064b2",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04f2c94181ac0aa1b99b02822950491ddcdf152c72e53a28736f5092853cdc77",
-        "protocol": "Opus"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0476e3589c53f1f0223cfe5129c80a03a9f7d32a69f7d9da2b6f70686bf685dc",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04327da17a67e92dcd37619b927a7ee962c92a951dc42f78598c54bf77db467a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x018f48627af21e49a5f93ac425cd64fffb868b7b879eb28987891310885d492f",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01e9a51d6e67d05405bca2b1e51e4d99f20c25ed623e8986a6695ec440c0272d",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x042591da0495da70ccf14253617cba29483c4cd9bacc4822d6adc4ddd24ccf62",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x02d55d6f311413945595788818d4e89e151360a2c2c6b5270d5d0ed16475505f",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x38f86afdf1aac885663756524532c09af5d3aff72571b6f592fca9d179b8a9",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07e8ed38f43d6033d7135979b4173dc734786953ddfe3e8d8328d14cb7eb1502",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07391abf66d5968f701ea51e6c741c5611e519ecb18b7ef52799323bfaf1375b",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x5db633db5911b64a56c3041768891dcf5bcf4726569828c6f0bf82cbf86c7d",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0545d5941f3cbaba606298b263bf44be53cf2fb06d967fa1fba8a87f75b81b88",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x3b96118833e554de54c7de0727c8f128b91ceb8f31758ab2107df0bf5877dd8",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x21b5e37d1aed987c1b4c2326001c9287cd5b94b3fb8b7d1691bd4b7d9567461",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x07367052785d032fc33ff14e5b285b0dc7fa916f6c62782354c0226cf0c13452",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x031492a73fb3cb526464d5da5f6f48beeff1db41b78948fcae339a57d721ac96",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0222a98e045e6befa834f62b6d9377664f8da9dbed2bee7a6f3adebbb31446b4",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01454c7d2dfd8642725d5d82dc478e61f1a952c3dfd2ab534d80f2d9982bc128",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0379cfb191c6243c2c0558bfcb8dedbb673f6f7ad05a22cde5ce4f0d45c2e527",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x75f080e3657739c72cd7b96d4fdb45d1afac9e687083681766f812076c57ff4",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x074995f5b29157e2149ce15bb90047a2b9ca1940f7426bd56145a0a709ca70b3",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05aad183cf3738e7d650beb1bbee886fb12bfa2d8d0be742986a2a31e431476a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x253463e700bfeca159f7e20612b5b46d56b805225106ecd926821dbb6b77588",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x031f451fe133a1f35e71d8e383d23f17c6e7582cc143b1d0ce7da94ad5552666",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x30d8f0c1d4b2c38553b834431984593e44a931983eb0576ad5b9ef5b46a9288",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x40ce8a775194a5c89d718ebc55cde1cc81f41944d571e6b5fab341e00c3164d",
-        "protocol": "Nimbora"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03269c1bf66b0ebbdf5b164c976b40d46b19e5b28bd5d0f0795e71cd3795fc75",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0135317e3b9571cd4e12ba891900a09fe030d9152d218f5a24a85d9db4492418",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x17bdf702d2cfb5cce6cc29891c66f3f845fdb88decb7ef91b5417ab52821ecf",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x02e09bd77c97b9880cb00fce9e006edd68a23d22330808fb98e75a566537f052",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x07f052122e98a09baf696b7d4a1a9eb80ba00905534815a05be184d9ac5dfb66",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x07e23976324884d285dc52a0a3f89cd8209427c4334661901ab7e60a466a3ea9",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x026d06dec6996ca33b5523bd3359d17e0f6e073f10ced7baa1cdc64224536479",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01905f77eb1dbb108c7e24f1e0dbac8a7c8fe5c6b7461c21deb1eff08edb7bcd",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01690cfe9bfddbccaad0d6f60dfc84d4d6f295b6407b424be705c535e864c198",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x018e74a0300ee8d0fc54c589345eb1c4f403c79f4cfeffe5a3b245355f51c42d",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05f377416412a3a79a2d1734eb7d91e1185327c0451302fe6f153c992361f000",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x00d54ce2028028b2272d9f770af48dbc56caa55b1495ed7c1ab43026e57d9f1a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x01ea496227a9ca511024f33d5d2ea125714d1e60d33a4e402078fa5444c98f07",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x055f7be42f3795062d59fda0b1dfcfde7cf045988eaf50cad75213adb7fdb276",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0414cf4dc22b33e11d1a5df7fac56c379bf1f50531dd73486cc7a4a851f6969e",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0141ac799ea17315a2498bc4212df23af77f3d99cc8ac3c4770a10b25fc5e4e1",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07829273a63af512cb8ae37b3c213db1fd1c9a9d722d2629e19d30cafc80d7c0",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05709576ea42870bfe0af5360f2d22eb96ab7d9fef933894bc1d304071ebfa94",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x01c887811c73800d3b1a6980098102475b3351d5df60d1d660afd90e9b4c5238",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x04e7a5236c69bff70dac3447173edca90a8e24fd1e5724369b56fbf623642a00",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0250e84a9b114fdae7a1e5f737d2569d9585e4e3d830032b17b569f3bbde4edd",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x004c6b97a0c9cdcd09fea3f03fcf41ef94c726a03fd8a5bb546624ed62844fad",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x01efca55f5aa6adbb44748cbd008bcc5ed5ad7aa8ac244f3de39e00e1cfe4e26",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x031bade48f16fa4ce7963647286a7b6d6ad900b2f7ae708e767999bcd8b701b0",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x06ff1f6ce813928804015118b835a11c9fed75d94aafea9d930917ed7c474e96",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x00f54aa6a9564db9a7ea7023f968b9853192afffe3849140ff7d5ef3453909fe",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x00e625ee4f6efb733de1438bb542cdb9bb3d1be7013df6728cfc8f563085844e",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x04d614c36879239e84e0e2fa2aab9fa1c5a4c1e5dada44c673ee00b02e435961",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x057491188884d6df63f710e1c7c0e1baf0d999561439ffa1897e56261449843a",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03dbcf92828fc6f1d89935a5ba78819a7922ec079fca347bb673cc5af07b4308",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05999329d662df777afa090a8b2b75abfd4c00f69daec2f23ba7327485fad3eb",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x021818c34b00c66f4ac2a7354ee33bc0e6084f931be4aa2ead4cddb50600774b",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0279af04679eb4b5aaf6f36be8282dd2854d1e694a223369ef7e9530c0af857c",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04fd3e387bef91d385504a2bb4a3bfcf466cd0ed64610610f6e3e8098bb87972",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05e7f42dcc73f184363ebb8696ea761d294aa19dd0d0bb4002ea55e70587b09d",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03b74a32d5b725eb506f6e76631a049055f0b28d143db7e572821d86d6932229",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x4bc7405c31eb772706d972d88349d297a493f41004e9e9181b6d4039ee39fa",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x44d6a795ac49c5272c9fafc68df62c46c6b21a5f71ed709f683a9b64d476331",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x51fd85c929a57f297beb9a4ed2f5bc196f1f8f3c5fe69dcaa4d3eec1e5e7850",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x47cc186f40939c0de1e8a5793ad01715d36d2e8719c42588ae5cbc73b14c628",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x4818d25c53679e855f8f11df022afc85f82a7ad23501445b9d0228932924fcd",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x66cabe824da3ff583b967ce571d393e8b667b33415acc750397aa66b64a5a6c",
-        "protocol": "zkLend"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0105efaf4071aca0e0b873b1d82800a8cf511a2834e72fbf55dd597424d8441f",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05f021486c296e6fbd76a74dcfe02a6ad20503e1c796da524ac59a4d4ac09a88",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x00453bc872396c1dcc18cc6a3ef8d3b4b2fd72f66f6ed2b40df80e0aa6bb412e",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07126f3a545bead2edbeaf4cf93e9937022267c2737cdb1aa3dcfbcd131f051e",
-        "protocol": "Opus"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x060b0ecf296c4e9c4392b8d418d478452252356d0e49480f1b5603ed61e17044",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03634a68d3e03d964b1606093a7c7dc0725c3e79833e91886c59801d547d6ae0",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x051ab17e1e412e58e20fd7f0c3090780303b874390dfbb65322a01f9908ba3b3",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0393518c91b789702dcb6c39c59d334c182bef471c9eba410e2ccbb005056740",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x6f6ca96a00bd58df2db4b62ef1df5f6ed4a52c09d23000973578ba484593fed",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x21813360a1d550734b9dce29d06a0833b600b27f60ce8456ccad14cdd19cb31",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x57fa7dfdb3fa36159b8789de1b144e1c4e7f539813a61da86b4ddc88d4c5dce",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x005ec641c04b0b8069758429d3d473d8daa8b8a221a4d93f5fb57398f3c95825",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x040ac2b5cfc9b0ec3c2810ad13e04b819f6e05a90603942fa5dcc9680dd633a2",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x07ea17b34ab08de9012e34a708fc2f3b6621266ea5157c0216a60ec80e6e2ac9",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x006d3df48097abaed370b771323d4e12503aa2253919d65c7d525ca330a9bcca",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x02b15711c26d273d17542908e434c9e03b6519c42473503009b9ac68ff387625",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0359f34d9378c589c2bb52a5ddae627c2732c6384ec58035358adfb4e843e296",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x59a3f8306a3d922400188fe2ddcdac4a5ecf4745e50cd590619bbadf5e1d2ff",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0xbc56b02aeaf6c3dd565fc56d482f16a2bcb1c8b829a96d1b175440f9dcfda3",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x39a1b0f33236c15ad74568aae9c960939aba40cd149a54032024a9df2fbe204",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0741fa5b2ab95946b214e85e101bcad3d27777f15b970845dc485c3f52f0b49d",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03635fd0f39407c08bf2b549b2508fa72fe2567b7213c42bd3ef5b5ac58db63c",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x3cde0238804cdf04d493ee01d5c679dbf3924f1780d0f5c7b1bc3fa8dc0fe2d",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04b5db25333146bbcf3fe89cd9d2217f1e1259042293849e59b7765f87d4f856",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x026b61f56894a72a3bd0903692fab0cb6aa1645d510d75bb819bfd12560eb57b",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x13b6c003cc6ba0dc21eca829bd03868e20dc781617beecb4f421fb80a1cf52a",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x04c0dd2526199f958f97bb9f12f05ffe4ddb9470934051a82470e5b9dc5452f0",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x05cd785cd78a52d0eb0ac3c7baf995317dd87076c163b8647e037be4056268e9",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x655a7a2ff4332e5c848d02ad9a7827412053119316fe60dbdcbaf489421e2ed",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x022de46f06c441b1ff58988e26f57d47425990a9034a25b934d7980993e1de10",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x03579e837517affc47730e041a842a3fb32ffc33ab577f7c8fe24742567b21ec",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x072741441436cf66321a56e3bbd233472d9edc8262190037020fd05784a0047d",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x22b06ad9f84e91728c439bb8a467631e98fe92cfcd1f564d0450af369a86eae",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x75b6c98165e268bac53c13254553727172ffd7dc0044f19b639827f109edf7c",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x0699ebf8c48b8f6ffb6923421169d6a320e184662823620c7661c1118d18757e",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x040bdda4deaa3bf344f1b30b672faebea3fa70ad7f8e814a8cd818c583f6d899",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0289c15e7234208385ff44b1a45342088f16923ce0c5380682806f7f847c66ff",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x025b09ba13a25c2e904f70f6ef5e8cef80ac5b779eab651c4ca7fccc2fe75d00",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x34a98844828d0556d0b7a5b92c50d16a0d65bc16991af4e12a0cc2f92c67d85",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x011d43afd969a737ed6ee8d67fb9045cce8f3f6a767fa0eca231eddb26a31415",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x032f93cc9fe1286eb73ce3f74c50e0e6fbcc32e3b87cb125ae0608181713c719",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x015e0403d72e24dd98123b8391bf3ad436eef97db7605940da082f6a516ab35a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x078a0f3bd08a884b625bad62acf92a3fb6eae44b561b89a9b2235b8b09d695fe",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x6afd0ba11de84b3af6d3085965f40bb6735f1a4eaee24a06c8996edb183272f",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x07e2674c967d1ce6b57c49f79e88caa476e046cda4447d29da75a9e7456c5c45",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0x03031a5b9d12adb208c0188b8d773cec7d74874d98412a0e3866ebf8e3dde8b2",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0586af483c60a006c01de37282aec435a5a589d995f454a5d0928ebe96fabcd9",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x006cd54a757dead6893afb8d544156f9573fb95eecb69aea807c02103674d37a",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
-        "contractAddress": "0xbdb9c1df999dd2f91b96456a34b228076c0e62cd98837cbfc9156dd37e3891",
-        "protocol": "Ekubo"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x063fdb8314dd2c1ced06cb848ce72643ff358219be226262c820cc498328f337",
-        "protocol": "Nostra"
-    },
-    {
-        "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
-        "contractAddress": "0x0058e138077a886df54fa4ac2350b256fa48c96d9b2c99fef75d866ca972ed0d",
-        "protocol": "Nostra"
-    }
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00dc347ea9e7dc2a307e853b97e7189dfb08679a98e8d5ba549a1872febf2e5d",
+    "protocol": "10kSwap"
+  },
+  {
+    "classHash": "0x21c6c54d027a8d37077b9b45e0aea4c5f22e40c59aba378f64e8cecc6b4a944",
+    "contractAddress": "0x078597e910132071274f2664664AB069cc0A4682f73E701D723B6fC2E8930b1b",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05eb02e164f78fd91b9be6a0b9b3aa02c936db485bd760730f65711533c70a26",
+    "protocol": "Haiko"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x027dee8c8c7f28d67bc771afe0c786bfb59d78f0e1ce303a86006b91b98dc3cf",
+    "protocol": "Jediswap_v1"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x005763f02381e89C6894FFEA078D1CF9e58dA0EAd33d5B52aA608ACc04063053",
+    "protocol": "MySwap"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x6eb587e14ebd9556db09f8d5854ae54bc24736e0e163443b3f7547e6cc908ea",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0575a33680cca4beb4c3efb7297b7ee0f7bb4e672a9149c4691f1409e6c94322",
+    "protocol": "Sithswap"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07e71f1efb9cb53253627449b5599842daa61c68bb04743609a96111a94f0f3b",
+    "protocol": "StarkDefi"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x079fea253b4424e0d4bf251c97b0b0f70e682b3d86952b8f534f150b05ae9afe",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x6f80b8e79c5a4f60aaa1d5d251e2dfc55496ed748f96cf38c034de6d578f3f",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x054ead9cbb7c140dd4f653aaad1f935ba8f8c002a2b8afea77793fdf8d1d80d3",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x7df3257d11cdbea698450bfa0b54f219e40447c4920511a74784d2f4ddac017",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03a3cc51e76135caee3473680a11f64db87537a0252f805d60e69f31e1a7e9b4",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x5eb02e164f78fd91b9be6a0b9b3aa02c936db485bd760730f65711533c70a26",
+    "protocol": "Haiko"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x354ae0842a8d49069f03f61701eaacc19733ec35352724f420acda500b8bedb",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x12d036d4822099814978b70404fc7cce8a1aeeaa6007d0889fa4f04225286b3",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02e20db0cd0af6739ff3e3003ea6932409867040b227bf9ba822239e5ba0dcaf",
+    "protocol": "Hashstack"
+  },
+  {
+    "classHash": "0x6e150953b26271a740bf2b6e9bca17cc52c68d765f761295de51ceb8526ee72",
+    "contractAddress": "0x051ba9be967d17aaafac92f9bc7ca4b035dfd3c4a97b32be1773f63e27b0526a",
+    "protocol": "Nimbora"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07bbdf36eb04b347e1ecd9b9b37eeac1688fa252db68888a79fdef358667feb2",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x3d3c4f7ae66c46312abcd32b7382685a1f0f15f0851c7487e317723074b1bdf",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0165e9f32fbd734f0ee34162b0bca57a421d4dc74573c4fc8f8f7a30e3a3d2ec",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01a80ae02f00b5fbd4f54e49269e41e86b9ac17e41ca044b70b03a4ccc6208ca",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x034f8ebe031e4b76de56020b69a42b919139f58cb6e574026fad69b1031b1500",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x4445c44da38613f2ab3a728c8dfd7d22e5fca270cc6a1ecf7daeffc68852920",
+    "protocol": "ZKX"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x00424e20c1d50a7dc2aa3b098f4da6dcb4b1fe19b64726de40fa2e46f0ea1530",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x039e67f782da34e09fc8483eb8820cf8036e622639c6823d1d1cc349192d93cf",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03d23bec5d2733adb0d93a397144a348b3394e5a9637dc2ed9ebe185fcea1584",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03ed86b38abb1af8b97d8b3fa1aa4298d5a7eafe303181ba234adf7309236e34",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07838fe8cdd61eb445f7773d9648476b571f17242058859ed7fba9074ee915d1",
+    "protocol": "Carmine"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x7ed46700bd12bb1ee8a33a8594791003f9710a1ab18edd958aed86a8f82d3d1",
+    "protocol": "Nimbora"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x053599a9dd14f5a0274636133cd9bac94698b06d90aafe180198370e10de05a6",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x06b0174a66234bebe7e89c4c160726ed04f35fa36a43da567ecd9d71012f0be8",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01b5b8e397940cbd3fd8f070826db922b550d23ae3af74d1c76763a8a4d3874a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0316ec925258619ae2df09f595a521c69210528d638824e48d1d99404810e59a",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04200eeaa4720dfbcc1de344bf9005b40fd334070b63ac2ba8e03f6b9277a2f5",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x004f179404857995c250eeb0282153886df4da1b6cbe66fe1b98ce70aee09621",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x06b3f806a76a857b661f32db07e41800a0cc2c228dd484a610f9cc28a2903e7a",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x014563b238d00c0a71fc7c4acbc056cda3c48a7fb61f60516a635f5a448fedaa",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0453bd894cb253d2c30e8d8fb327c2d3ee5d3cc4643d9ff37ef0235e49b6fce5",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x042a0f5b02339cd2c9f308295f8b73d6b15fcbbdb654ca879e117e3444d4a6b0",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02e83cfab80d28f82a590513cb8b5f21125622e902ab72016099582fde99da0b",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x02d25134a16e54b507ef3a1217aa4b5ac5234df48030c50d299a0571e1c53c35",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x035861d7ebcdc4437b15b5afe6b2a0b586e4f974f235c8e6a19a0519562d6bc2",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x00db7a187d50a4ca88396bb97dd375ae308f71e7a2eb7d2a1ce887b7f808c1a2",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0209d7c2559b6bd4159c41660a5d58ea2641ac35c030f8e993d01f2a4fe10a20",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x06bd37a1211fa93e1212b2716c2e26635be9f9fa3e540908756b4d3b0fbc8723",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07ed46700bd12bb1ee8a33a8594791003f9710a1ab18edd958aed86a8f82d3d1",
+    "protocol": "Nimbora"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x057623cb51e5cca0775d9d3c5cd3cb06b833f020169fff45fad0a530aba5279e",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07ddaec5b387b2e1c2608b2b9b645a9c963fa48dbba96785d4978b0e4f2d3391",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0469c17745cfead24637baa36ae9f7c0e40d04f680325f0d6c6e34d1d76dbd22",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x023bb4d7008f49361a883019e00466f3247f0da83b77a4f0b8e2326b32a94b62",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0387f3eb1d98632fbe3440a9f1385Aec9d87b6172491d3Dd81f1c35A7c61048F",
+    "protocol": "Vesu"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x043229f6b274f9deb687c0a738e3dd5a17f1cd72abac68843b37ce1ee0acdc50",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x063bf2cd64938746437eb7a1f551666ebe5ac853b51f54eab0e3c0eb158c6f26",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0021cf27d9fc887e59538af65507c3dde24a62c04c1a8f6365750e7d74cbab15",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0360bbd8a26a2e82b80e2dbfff346ed98565348f1c625c451f4e00cf6d213b1e",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0039cae3c22bc27689b43c4e6494044107490ecb711f89c06aec202fd80ddc03",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0027500e7657db8ec576bf419611d640fa23d5f5bac6b1b543c9fc6fc6eec24c",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03041489fb289560b1c118d7fff78cd55b3007b24ec4ee659a9a8d313fb8672d",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x02094004042485b2b4aa5192211443f960b15e0f622c07fa6b38c25c318e77ba",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x04ee020cc69be671b81248ae780eebaf652de490c95ca3c0d821ee2dd80a7fdb",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04fc6aa08cd359710f619476074e0ff7e7f82532d6fb1b3960b5818a796f75e3",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x041ae8cae25b8b723aaa5af424b979bbf37c778f0435cee87f010a4f461eaeb7",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x222149da86b5dbd8c3aaf3ec48b6da44de5f513a588522cd6edfdd2ca05b1a8",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07ac27ad2c6bdeb2ccc3d4afb26c87f58439a37ec49b7b0aec8f7ac8e572902f",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x008faa2edc6833a6ad0625f1128d56cf471c3f9649ff2201d9ef49d7e9bb18de",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0745b7a2edcf5612049c588a26ab75753c4577ff0a0e32d62edea1a4ef2782c5",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01c85474d2539bc6ffe0a9808b0afc980ac56bd97a15222464cd9de88e5ed7e3",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x3b62c30fe68e401f44570d8129828af18b2a9f8fd1462ee4f961dbd36c8fda5",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0201bed466ee86ed71f91104fe477d4ad25b817f734c55ba3b2ecf08eca75a51",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x007a7e603deece06f5c2b3859ca4a3b81e991b7629fa4203ff2ba883952572ca",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07b8b7d9c16cfc00e475065ad5eaa740899355d0a982c1a4249af360462673a2",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x00703fd2ea6f6e694427cd87189e77fcb5beb2daa404583d2216686dad7cd1c2",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x1a6e6394abc1d560adc98edbf2e6c40dd0b625b5f37fe11ec59bd495dd5ee2e",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x327b1449835ec9c685b7c196576041359020fa10829f6a99feada8245f97af6",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x30d1ad842a36b8d3d047cd3f7470bbd44c2b50a01d9702944b0b96cc4c03632",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x48319c00fbfe3ce6ed148c7c6c56d8ca8c38e553d3fa364ded7905cc321bb6",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x04068dd4fc5e88ec6dab42878c234e7e0245b86e0783e6c732ee3e2972cc5d7c",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x071c22b3ec86f72739bb5846eda3ad2f58745b1ae6b041f9ceda55ce15991d43",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x314341cc731260254db9efd6a309cd31af03cde435869d6ad7ad9d5b3552866",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x065ccbcd9dbff2a3436e233fdef9e2204b7da5f7aa929126db4bb4216a2ef6d3",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0271b5bad64f7b193d98185491be7a5eb5234c7802a77ef4445ef8119250783a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x051d1820021439813ed35e7ff9e05fae5559f5997ddb4f64381533bf772ad5a1",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x6af395817d0b2b01bcb9cb4f7360318ef3cf361e36fcc2d62e2f3390efb8f2e",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x384ec8b5c41e637c099363dbe7a5e997bdb99c5fd9ec60f74ea67ef47c54a79",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x061d8a66d6cfafdb4c719e510c80442bf9f870c228606db89b355e2ca30b9ea7",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0400d5e21633a1ee11b5b806be3c51ada3446cc51dfe2cc4e8ed6291c5ce8602",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0099fd1f0d3f019e379c5d2c8808045da5ab509cfd88873c1f658833600ceeaa",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03766ad221286f536405ab3e6690ab6ec6da3e32c14e756660ff7b854e0fab10",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x034a800f61f2254495393705e577a6a4386e5666c2225def1908fe466177c7b9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x06c9efe5fe86c3bccd63b8bed6675452938bcf9a9cd86eecee712251973b4f74",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x317af77469948a348f04ea172cbc8bb858ad88fd076c2a69cc952d1de73592c",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x021ad3449f3e4d19671e7f7dd528e8f5bdd70df7f807150fb7a0806d831c274d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x008965c75b15f875e151d58b7e646f6048207551d8bab6fc3ac0fa090d9db050",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x1b4162e15f27768a442aa37c8c2de0d79b65257ada63bd3b7e6db1b100b5fa1",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01a9acedc9a858ec3a2b6e5b2540aab67c6fab3376c5d56b44dfc3c18d727663",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0453ec6d0a035905c3c6c33419c4968f25807bc61ab4f6c88e5c6edfc41ef7d9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x011af47961de0de9ad82df1519de63b6f802042177fa85651600335dd1ee270e",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x7da3010578026bd73a48b72bdf7fabe7e7669b4425b4b1567060e5740bc861a",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03bfa91cff8a8515d96382ec20ce7cc1337c11894c69c9131797a20dfea79928",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0415d4e77c0507434cc38ad523a20f9fd5155a4267a86f99bc8b787284f644f3",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02fb7fccac476f59c90d707d0260901d5325ad327928bfab8a463e84610ee5de",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02ada1f8aff9b50c1816e1054260f8e5d41cbdcd5f4945be1e7924514ff4cc93",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x53d2784a843ee1bb614c662db972b38a5180941b56fe01d81c0dfa9657064b2",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04f2c94181ac0aa1b99b02822950491ddcdf152c72e53a28736f5092853cdc77",
+    "protocol": "Opus"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0476e3589c53f1f0223cfe5129c80a03a9f7d32a69f7d9da2b6f70686bf685dc",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04327da17a67e92dcd37619b927a7ee962c92a951dc42f78598c54bf77db467a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x018f48627af21e49a5f93ac425cd64fffb868b7b879eb28987891310885d492f",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01e9a51d6e67d05405bca2b1e51e4d99f20c25ed623e8986a6695ec440c0272d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x042591da0495da70ccf14253617cba29483c4cd9bacc4822d6adc4ddd24ccf62",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x02d55d6f311413945595788818d4e89e151360a2c2c6b5270d5d0ed16475505f",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x38f86afdf1aac885663756524532c09af5d3aff72571b6f592fca9d179b8a9",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07e8ed38f43d6033d7135979b4173dc734786953ddfe3e8d8328d14cb7eb1502",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07391abf66d5968f701ea51e6c741c5611e519ecb18b7ef52799323bfaf1375b",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x5db633db5911b64a56c3041768891dcf5bcf4726569828c6f0bf82cbf86c7d",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0545d5941f3cbaba606298b263bf44be53cf2fb06d967fa1fba8a87f75b81b88",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x3b96118833e554de54c7de0727c8f128b91ceb8f31758ab2107df0bf5877dd8",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x21b5e37d1aed987c1b4c2326001c9287cd5b94b3fb8b7d1691bd4b7d9567461",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07367052785d032fc33ff14e5b285b0dc7fa916f6c62782354c0226cf0c13452",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x031492a73fb3cb526464d5da5f6f48beeff1db41b78948fcae339a57d721ac96",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0222a98e045e6befa834f62b6d9377664f8da9dbed2bee7a6f3adebbb31446b4",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01454c7d2dfd8642725d5d82dc478e61f1a952c3dfd2ab534d80f2d9982bc128",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0379cfb191c6243c2c0558bfcb8dedbb673f6f7ad05a22cde5ce4f0d45c2e527",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x75f080e3657739c72cd7b96d4fdb45d1afac9e687083681766f812076c57ff4",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x074995f5b29157e2149ce15bb90047a2b9ca1940f7426bd56145a0a709ca70b3",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05aad183cf3738e7d650beb1bbee886fb12bfa2d8d0be742986a2a31e431476a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x253463e700bfeca159f7e20612b5b46d56b805225106ecd926821dbb6b77588",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x031f451fe133a1f35e71d8e383d23f17c6e7582cc143b1d0ce7da94ad5552666",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x30d8f0c1d4b2c38553b834431984593e44a931983eb0576ad5b9ef5b46a9288",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x40ce8a775194a5c89d718ebc55cde1cc81f41944d571e6b5fab341e00c3164d",
+    "protocol": "Nimbora"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03269c1bf66b0ebbdf5b164c976b40d46b19e5b28bd5d0f0795e71cd3795fc75",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0135317e3b9571cd4e12ba891900a09fe030d9152d218f5a24a85d9db4492418",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x17bdf702d2cfb5cce6cc29891c66f3f845fdb88decb7ef91b5417ab52821ecf",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x003d0231d65ec6fa55a28923c365ec4d54b7b1a987620715a56a6dd86d19fbb8",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x02e09bd77c97b9880cb00fce9e006edd68a23d22330808fb98e75a566537f052",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07f052122e98a09baf696b7d4a1a9eb80ba00905534815a05be184d9ac5dfb66",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07e23976324884d285dc52a0a3f89cd8209427c4334661901ab7e60a466a3ea9",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x026d06dec6996ca33b5523bd3359d17e0f6e073f10ced7baa1cdc64224536479",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01905f77eb1dbb108c7e24f1e0dbac8a7c8fe5c6b7461c21deb1eff08edb7bcd",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01690cfe9bfddbccaad0d6f60dfc84d4d6f295b6407b424be705c535e864c198",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x018e74a0300ee8d0fc54c589345eb1c4f403c79f4cfeffe5a3b245355f51c42d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05f377416412a3a79a2d1734eb7d91e1185327c0451302fe6f153c992361f000",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00d54ce2028028b2272d9f770af48dbc56caa55b1495ed7c1ab43026e57d9f1a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01ea496227a9ca511024f33d5d2ea125714d1e60d33a4e402078fa5444c98f07",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x055f7be42f3795062d59fda0b1dfcfde7cf045988eaf50cad75213adb7fdb276",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0414cf4dc22b33e11d1a5df7fac56c379bf1f50531dd73486cc7a4a851f6969e",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0141ac799ea17315a2498bc4212df23af77f3d99cc8ac3c4770a10b25fc5e4e1",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07829273a63af512cb8ae37b3c213db1fd1c9a9d722d2629e19d30cafc80d7c0",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05709576ea42870bfe0af5360f2d22eb96ab7d9fef933894bc1d304071ebfa94",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01c887811c73800d3b1a6980098102475b3351d5df60d1d660afd90e9b4c5238",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x04e7a5236c69bff70dac3447173edca90a8e24fd1e5724369b56fbf623642a00",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0250e84a9b114fdae7a1e5f737d2569d9585e4e3d830032b17b569f3bbde4edd",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x004c6b97a0c9cdcd09fea3f03fcf41ef94c726a03fd8a5bb546624ed62844fad",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01efca55f5aa6adbb44748cbd008bcc5ed5ad7aa8ac244f3de39e00e1cfe4e26",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x031bade48f16fa4ce7963647286a7b6d6ad900b2f7ae708e767999bcd8b701b0",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x06ff1f6ce813928804015118b835a11c9fed75d94aafea9d930917ed7c474e96",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00f54aa6a9564db9a7ea7023f968b9853192afffe3849140ff7d5ef3453909fe",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x00e625ee4f6efb733de1438bb542cdb9bb3d1be7013df6728cfc8f563085844e",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x04d614c36879239e84e0e2fa2aab9fa1c5a4c1e5dada44c673ee00b02e435961",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x057491188884d6df63f710e1c7c0e1baf0d999561439ffa1897e56261449843a",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03dbcf92828fc6f1d89935a5ba78819a7922ec079fca347bb673cc5af07b4308",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05999329d662df777afa090a8b2b75abfd4c00f69daec2f23ba7327485fad3eb",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x021818c34b00c66f4ac2a7354ee33bc0e6084f931be4aa2ead4cddb50600774b",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0279af04679eb4b5aaf6f36be8282dd2854d1e694a223369ef7e9530c0af857c",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04fd3e387bef91d385504a2bb4a3bfcf466cd0ed64610610f6e3e8098bb87972",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05e7f42dcc73f184363ebb8696ea761d294aa19dd0d0bb4002ea55e70587b09d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03b74a32d5b725eb506f6e76631a049055f0b28d143db7e572821d86d6932229",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x4bc7405c31eb772706d972d88349d297a493f41004e9e9181b6d4039ee39fa",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x44d6a795ac49c5272c9fafc68df62c46c6b21a5f71ed709f683a9b64d476331",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x51fd85c929a57f297beb9a4ed2f5bc196f1f8f3c5fe69dcaa4d3eec1e5e7850",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x47cc186f40939c0de1e8a5793ad01715d36d2e8719c42588ae5cbc73b14c628",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x4818d25c53679e855f8f11df022afc85f82a7ad23501445b9d0228932924fcd",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x66cabe824da3ff583b967ce571d393e8b667b33415acc750397aa66b64a5a6c",
+    "protocol": "zkLend"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0105efaf4071aca0e0b873b1d82800a8cf511a2834e72fbf55dd597424d8441f",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05f021486c296e6fbd76a74dcfe02a6ad20503e1c796da524ac59a4d4ac09a88",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00453bc872396c1dcc18cc6a3ef8d3b4b2fd72f66f6ed2b40df80e0aa6bb412e",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07126f3a545bead2edbeaf4cf93e9937022267c2737cdb1aa3dcfbcd131f051e",
+    "protocol": "Opus"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x060b0ecf296c4e9c4392b8d418d478452252356d0e49480f1b5603ed61e17044",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03634a68d3e03d964b1606093a7c7dc0725c3e79833e91886c59801d547d6ae0",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x051ab17e1e412e58e20fd7f0c3090780303b874390dfbb65322a01f9908ba3b3",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0393518c91b789702dcb6c39c59d334c182bef471c9eba410e2ccbb005056740",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x6f6ca96a00bd58df2db4b62ef1df5f6ed4a52c09d23000973578ba484593fed",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x21813360a1d550734b9dce29d06a0833b600b27f60ce8456ccad14cdd19cb31",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x57fa7dfdb3fa36159b8789de1b144e1c4e7f539813a61da86b4ddc88d4c5dce",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x005ec641c04b0b8069758429d3d473d8daa8b8a221a4d93f5fb57398f3c95825",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x040ac2b5cfc9b0ec3c2810ad13e04b819f6e05a90603942fa5dcc9680dd633a2",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07ea17b34ab08de9012e34a708fc2f3b6621266ea5157c0216a60ec80e6e2ac9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x006d3df48097abaed370b771323d4e12503aa2253919d65c7d525ca330a9bcca",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02b15711c26d273d17542908e434c9e03b6519c42473503009b9ac68ff387625",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0359f34d9378c589c2bb52a5ddae627c2732c6384ec58035358adfb4e843e296",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x59a3f8306a3d922400188fe2ddcdac4a5ecf4745e50cd590619bbadf5e1d2ff",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0xbc56b02aeaf6c3dd565fc56d482f16a2bcb1c8b829a96d1b175440f9dcfda3",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x39a1b0f33236c15ad74568aae9c960939aba40cd149a54032024a9df2fbe204",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0741fa5b2ab95946b214e85e101bcad3d27777f15b970845dc485c3f52f0b49d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03635fd0f39407c08bf2b549b2508fa72fe2567b7213c42bd3ef5b5ac58db63c",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x3cde0238804cdf04d493ee01d5c679dbf3924f1780d0f5c7b1bc3fa8dc0fe2d",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04b5db25333146bbcf3fe89cd9d2217f1e1259042293849e59b7765f87d4f856",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x026b61f56894a72a3bd0903692fab0cb6aa1645d510d75bb819bfd12560eb57b",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x13b6c003cc6ba0dc21eca829bd03868e20dc781617beecb4f421fb80a1cf52a",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x04c0dd2526199f958f97bb9f12f05ffe4ddb9470934051a82470e5b9dc5452f0",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05cd785cd78a52d0eb0ac3c7baf995317dd87076c163b8647e037be4056268e9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x655a7a2ff4332e5c848d02ad9a7827412053119316fe60dbdcbaf489421e2ed",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x022de46f06c441b1ff58988e26f57d47425990a9034a25b934d7980993e1de10",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03579e837517affc47730e041a842a3fb32ffc33ab577f7c8fe24742567b21ec",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x072741441436cf66321a56e3bbd233472d9edc8262190037020fd05784a0047d",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x22b06ad9f84e91728c439bb8a467631e98fe92cfcd1f564d0450af369a86eae",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x75b6c98165e268bac53c13254553727172ffd7dc0044f19b639827f109edf7c",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x0699ebf8c48b8f6ffb6923421169d6a320e184662823620c7661c1118d18757e",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x040bdda4deaa3bf344f1b30b672faebea3fa70ad7f8e814a8cd818c583f6d899",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0289c15e7234208385ff44b1a45342088f16923ce0c5380682806f7f847c66ff",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x025b09ba13a25c2e904f70f6ef5e8cef80ac5b779eab651c4ca7fccc2fe75d00",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x34a98844828d0556d0b7a5b92c50d16a0d65bc16991af4e12a0cc2f92c67d85",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x011d43afd969a737ed6ee8d67fb9045cce8f3f6a767fa0eca231eddb26a31415",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x032f93cc9fe1286eb73ce3f74c50e0e6fbcc32e3b87cb125ae0608181713c719",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x015e0403d72e24dd98123b8391bf3ad436eef97db7605940da082f6a516ab35a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x078a0f3bd08a884b625bad62acf92a3fb6eae44b561b89a9b2235b8b09d695fe",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x6afd0ba11de84b3af6d3085965f40bb6735f1a4eaee24a06c8996edb183272f",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07e2674c967d1ce6b57c49f79e88caa476e046cda4447d29da75a9e7456c5c45",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x03031a5b9d12adb208c0188b8d773cec7d74874d98412a0e3866ebf8e3dde8b2",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0586af483c60a006c01de37282aec435a5a589d995f454a5d0928ebe96fabcd9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x006cd54a757dead6893afb8d544156f9573fb95eecb69aea807c02103674d37a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0xbdb9c1df999dd2f91b96456a34b228076c0e62cd98837cbfc9156dd37e3891",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x063fdb8314dd2c1ced06cb848ce72643ff358219be226262c820cc498328f337",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0058e138077a886df54fa4ac2350b256fa48c96d9b2c99fef75d866ca972ed0d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01d5affe93fb596ebf5388333e4a969fe50c63e7128b96de88bc90d9c06f684a",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x03a30f5fe2bae06dac1a2111d4e9c36c1b9ac4bdf0669f121b8cec71e54f1e31",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x4ad3c1dc8413453db314497945b6903e1c766495a1e60492d44da9c2a986e4b",
+    "contractAddress": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d",
+    "protocol": ""
+  },
+  {
+    "classHash": "0x5ffbcfeb50d200a0677c48a129a11245a3fc519d1d98d76882d1c9a1b19c6ed",
+    "contractAddress": "0x03fe2b97c1fd336e750087d68b9b867997fd64a2661ff3ca5a7c771641e8e7ac",
+    "protocol": ""
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01d77f4775dd68f990ad473245d8c104a075c07962dc973588123ef451b37d25",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x02549de10e66a2446ca6f11eeb42f200a079ad564db73bfaaff55359a1db461d",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x379f241510493112e8b6047f1f82c0ea94efcd449e234093866c0635472e30c",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x4616d2a792c3f173da0ac5390bc355ab7cb2cfd9eb9c546a052a9bd47d45d59",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01ffde9849f8285d28dc3cd3606a4e1eb50ceb00b4e435d1755203e182f21282",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00998b9b269f8e1c7ae68b0bb88764fc3116976362564a15034f61e7fdd82cf6",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01e947b4e3d31ce10b621212be04762d7a524d16667e0ef91c0fa7ffa53d788f",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x011bfb4f0d53d5ebd51d2cbf46e749b4762e298d8bd50c18f57948059036cd1b",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0146891820c41c1c899b0bf66c370917d8f55e81bc129de4c3ce5d7315e04488",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x043851b305b923f740205fd270b021a78bf2a25fddc153eb5f5de85241c2a191",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0108bd72931d61b5fdfa15a5ad75d5e6de7e873a4315862ec6f2011420913cf1",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05eec58c8d08addf044ca1ecb7687d67a3a6197fa3516246335b9167f707ef42",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x00cfb217ad70c4830880f283f115a2e64a6402fe7ec6943ac2cd92c532b53f18",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x0226d90fa079e7a8106d321b0af4a816b5bbb42816a38be60efad1fcee5c0a96",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x026422741946ed3cad73c80eaebabe4ea0912867ddaa338d9a63e57a4055a7a1",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x01584c8bdef0db31a0d517f39af5b9b5c7439ff2a2c15e154ae77f3956b69749",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x07a78aae334971a842fe2acf62632c1b183ba81c02873e519726c06659468577",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x6a54af2934978ac59b27b91291d3da634f161fd5f22a2993da425893c44c64",
+    "contractAddress": "0x05b2e035cba63bd1b8637fc5b5cc897b938f7fe8827adeebfff298da5ad09fd9",
+    "protocol": "Nostra"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x30a351fd31278d80f520122bec08bab37e1f4962fc03b8360a5515b674c82b2",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x066b8edef465d815fc031cbdff0c9c7868e7dd5e5847cc33fd9ddaa519f8da33",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x04caed72c46251848be097a0a3cf4adf28e38811d7627b289366a4f75daa8c14",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01365268380140d2919f3b3f99761800300c52fa013a06d32aeb79c7c70f9409",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x01802994d468428097d1379f7f39a62396579ac5328afba03526414bb509b764",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x059b09260c39264177f051b1c1d68f6bb36865f537a3c4c56182220081b59c4c",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x05f51e0b1098d50fe233501bf4419e8d3e8601347ace6194030f4dd020b73c9d",
+    "protocol": "Ekubo"
+  },
+  {
+    "classHash": "0x1cb5e128a81be492ee7b78cf4ba4849cb35f311508e13a558755f4549839f14",
+    "contractAddress": "0x07d024bf5617548fb963b331488746cbef3d40f4c2f10e26518dbdf4cb15c5d0",
+    "protocol": "Ekubo"
+  }
 ]

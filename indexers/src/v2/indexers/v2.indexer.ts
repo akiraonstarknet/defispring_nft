@@ -51,7 +51,7 @@ export function createIndexer<
         db: database,
         idColumn: "id",
         persistState: true,
-        indexerName: "v2.indexer",
+        indexerName: "v2.indexer2b",
       }),
     ],
     filter: {
@@ -125,19 +125,17 @@ export function createIndexer<
             eq(schema.claims.eventIndex, record.eventIndex),
           )).limit(1);
 
-          const isFound = existing.length > 0;
-          console.log(`Record found: ${isFound}`, existing);
           if (existing.length) {
             console.log(`Record already exists, updating...`);
-            await database.update(schema.claims)
-            .set(record)
-            .where(and(
-              eq(schema.claims.block_number, record.block_number),
-              eq(schema.claims.txIndex, record.txIndex),
-              eq(schema.claims.eventIndex, record.eventIndex),
-            ))
-            .execute();
-            console.log(`Updated existing record`);
+            // await database.update(schema.claims)
+            // .set(record)
+            // .where(and(
+            //   eq(schema.claims.block_number, record.block_number),
+            //   eq(schema.claims.txIndex, record.txIndex),
+            //   eq(schema.claims.eventIndex, record.eventIndex),
+            // ))
+            // .execute();
+            // console.log(`Updated existing record`);
           } else {
             console.log(`Inserting new record...`);
             await database
